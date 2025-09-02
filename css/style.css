@@ -111,9 +111,26 @@ section:nth-child(odd) {
 
 /* CTA Section */
 .final-cta {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
     color: var(--white);
     text-align: center;
+    position: relative;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    opacity: 0.9;
+}
+
+.final-cta .container {
+    position: relative;
+    z-index: 1;
 }
 
 .final-cta h2 {
@@ -121,27 +138,37 @@ section:nth-child(odd) {
     margin-bottom: 1rem;
     color: #ffffff;
     font-weight: 700;
+    text-shadow: none;
 }
 
 .final-cta p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #ffffff;
-    opacity: 1;
+    color: #e2e8f0;
     font-weight: 500;
+    text-shadow: none;
+    line-height: 1.7;
 }
 
-.final-cta .cta-button {
-    background: var(--secondary);
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+.final-cta p strong {
     color: #ffffff;
     font-weight: 700;
 }
 
+.final-cta .cta-button {
+    background: #f59e0b;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    color: #000000;
+    font-weight: 700;
+    text-shadow: none;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
 .final-cta .cta-button:hover {
     background: #d97706;
-    color: #ffffff;
+    color: #000000;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
 }
 
 /* Footer */
@@ -180,8 +207,12 @@ footer p {
     
     .final-cta p {
         font-size: 1.1rem;
-        color: #ffffff;
+        color: #e2e8f0;
         font-weight: 500;
+    }
+    
+    .final-cta p strong {
+        color: #ffffff;
     }
 }
 
