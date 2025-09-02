@@ -581,6 +581,10 @@ a:hover {
         padding: 3rem 0;
     }
     
+    section:first-of-type {
+        padding-top: 5rem; /* Adjusted for smaller mobile screens */
+    }
+    
     .container {
         padding: 0 1rem;
     }
