@@ -611,6 +611,63 @@ a:hover {
     background-clip: text;
 }
 
+/* LP helpers */
+.section-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.hero-proof {
+    margin-top: 2rem;
+}
+
+.cta-note {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.footer-links {
+    margin-top: 0.75rem;
+}
+
+.footer-links a {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: 700;
+}
+
+/* FAQ */
+.faq-item {
+    padding: 0.25rem 0;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text-primary);
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    float: right;
+    color: var(--accent);
+}
+
+.faq-item[open] summary::after {
+    content: '–';
+}
+
+.faq-item p {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+}
+
 .glass-effect {
     background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);

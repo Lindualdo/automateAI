@@ -1,6 +1,23 @@
 // Main JavaScript functionality
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    // WhatsApp CTA (define uma vez e aplica em todos os botões/links)
+    const rawNumber = (document.body?.dataset?.whatsappNumber || '').trim();
+    const whatsappNumber = rawNumber || '55XXXXXXXXXXX'; // atualize no index.html
+    const defaultMessage =
+        'Olá! Quero conversar sobre Consultoria de TI, Automação e IA.\n' +
+        'Empresa: \n' +
+        'Segmento: \n' +
+        'Tamanho do time de TI: \n' +
+        'Gargalo nº 1: \n';
+    const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+
+    document.querySelectorAll('.whatsapp-cta').forEach((link) => {
+        link.setAttribute('href', whatsappHref);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+    });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -20,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.background = 'rgba(15, 23, 42, 0.92)';
             header.style.backdropFilter = 'blur(10px)';
         } else {
-            header.style.background = 'var(--white)';
+            header.style.background = 'rgba(15, 23, 42, 0.92)';
             header.style.backdropFilter = 'none';
         }
     });
@@ -52,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Optional: Add click tracking for analytics
-    document.querySelectorAll('.cta-button, .hero-cta').forEach(button => {
+    document.querySelectorAll('.cta-button, .hero-cta, .whatsapp-cta').forEach(button => {
         button.addEventListener('click', function() {
             // Example: Google Analytics event tracking
             if (typeof gtag !== 'undefined') {

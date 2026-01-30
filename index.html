@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automate AI - Soluções de IA e Automação para o Seu Negócio</title>
-    <meta name="description" content="Transforme sua empresa com inteligência artificial treinada sob medida. Chatbots, automação inteligente e agentes digitais para aumentar produtividade em até 80%.">
-    <meta name="keywords" content="IA, inteligência artificial, automação, chatbots, agentes digitais, transformação digital">
+    <title>Automate AI — Consultoria de TI, Automação e IA para escalar equipes</title>
+    <meta name="description" content="Consultoria de TI, processos, automação e IA para aumentar escala e produtividade (SDLC + operações). Entregas com métricas, governança e integração com seu stack.">
+    <meta name="keywords" content="consultoria de TI, automação, IA, ai solutions architect, processos, transformação digital, SDLC, software house, TI interna">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Automate AI - Soluções de IA Sob Medida">
-    <meta property="og:description" content="Transforme sua empresa com IA treinada com seus dados. Produtividade até 80% maior.">
+    <meta property="og:title" content="Automate AI — Consultoria de TI, Automação e IA">
+    <meta property="og:description" content="Escala, produtividade e redução de custo com automação e IA aplicada (SDLC + operações).">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://automate-ai.com">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Automate AI - Soluções de IA Sob Medida">
-    <meta name="twitter:description" content="IA treinada para seu negócio. Produtividade até 80% maior.">
+    <meta name="twitter:title" content="Automate AI — Consultoria de TI, Automação e IA">
+    <meta name="twitter:description" content="Aumente escala da TI com automação e IA aplicada, com governança e métricas.">
     
     <link rel="canonical" href="https://automate-ai.com">
     <link rel="icon" type="image/svg+xml" href="assets/automation-favicon.svg">
@@ -47,8 +47,8 @@
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background: var(--white);
+            background: #0f172a;
+            color: #f8fafc;
         }
         
         .container {
@@ -59,8 +59,9 @@
         
         /* Critical: Header */
         header {
-            background: var(--white);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: rgba(15, 23, 42, 0.92);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.8);
             position: fixed;
             top: 0;
             width: 100%;
@@ -77,27 +78,30 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: #3b82f6;
         }
         
         .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--white);
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #0b1220;
             padding: 0.75rem 1.5rem;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
         }
         
         /* Critical: Hero Section */
         .hero {
-            background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 50%, #ffffff 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.92) 50%, rgba(15, 23, 42, 0.98) 100%);
             padding: 8rem 0 4rem;
             text-align: center;
         }
@@ -106,7 +110,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -114,29 +118,51 @@
         
         .hero p {
             font-size: 1.25rem;
-            color: #1f2937;
+            color: #cbd5e1;
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 780px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .hero-cta {
-            background: var(--secondary);
-            color: var(--white);
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #0b1220;
             padding: 1rem 2rem;
             font-size: 1.1rem;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-block;
             transition: all 0.3s;
         }
         
         .hero-cta:hover {
-            background: #d97706;
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35);
+        }
+
+        .section-kicker {
+            opacity: 0.9;
+            color: #cbd5e1;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-link {
+            color: #cbd5e1;
+            text-decoration: underline;
+            font-weight: 600;
         }
         
         /* Mobile responsive for critical elements */
@@ -164,211 +190,290 @@
     <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
-<body>
-    <!-- Header -->
+<body data-whatsapp-number="55XXXXXXXXXXX">
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">🤖 Automate AI</div>
-                <a href="#contato" class="cta-button">Fale Conosco</a>
+                <div class="logo">Automate AI</div>
+                <a class="cta-button whatsapp-cta" href="#" aria-label="Fale conosco agora no WhatsApp">
+                    <span>Fale conosco agora</span>
+                    <span aria-hidden="true">WhatsApp</span>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="topo">
         <div class="container">
-            <h1>🚀 Soluções de IA e Automação para o Seu Negócio</h1>
-            <p>Transforme sua empresa com inteligência artificial <strong>treinada sob medida</strong>. Ganhe eficiência, reduza custos e escale resultados com soluções exclusivas para o seu contexto.</p>
-            <a href="#solucoes" class="hero-cta">Descobrir Soluções</a>
+            <p class="section-kicker">Consultoria de TI • Processos • Automação • IA</p>
+            <h1>Escalamos sua TI e sua operação com automação e IA aplicada</h1>
+            <p>
+                Você ganha <strong>mais entregas com o mesmo time</strong>, reduz <strong>retrabalho e incidentes</strong>,
+                padroniza o ciclo de desenvolvimento e automatiza rotinas críticas com <strong>métricas e governança</strong>.
+            </p>
+            <div class="cta-row">
+                <a class="hero-cta whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
+                <a class="cta-link" href="#servicos">Ver serviços</a>
+            </div>
+            <div class="hero-proof">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>Mais throughput</h3>
+                        <p>Automação + padrões no SDLC</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Menos custo</h3>
+                        <p>Horas economizadas + menos retrabalho</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Qualidade e SLA</h3>
+                        <p>Observabilidade, alertas e rastreabilidade</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
+            </div>
         </div>
     </section>
 
-    <!-- Automação Inteligente -->
-    <section id="solucoes">
+    <section id="dores">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🔧</span>Automação Inteligente com IA</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 3rem;">Deixe que a IA cuide das tarefas repetitivas e libere sua equipe para pensar grande.</p>
-            
+            <h2 class="section-title"><span class="section-icon">⚠️</span>Se isso está acontecendo, você está perdendo escala</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Processos Otimizados</h3>
+                    <h3>TI no limite</h3>
                     <ul class="feature-list">
-                        <li><strong>Otimização de Processos:</strong> Automação em RH, contabilidade, compliance e P&D</li>
-                        <li><strong>Leads Qualificados:</strong> A IA identifica e engaja clientes ideais em tempo real</li>
-                        <li><strong>Previsão de Vendas:</strong> Antecipe tendências e acerte no pipeline</li>
+                        <li>Backlog infinito e urgências dominando</li>
+                        <li>Equipe sênior em tarefas repetitivas</li>
+                        <li>Pouca previsibilidade e baixa cadência</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Conteúdo e Marketing</h3>
+                    <h3>SDLC sem padrão</h3>
                     <ul class="feature-list">
-                        <li><strong>Conteúdo em Escala:</strong> Geração de artigos, posts e relatórios sob demanda</li>
-                        <li><strong>Auditorias Inteligentes:</strong> Monitoramento contínuo de sites e redes sociais</li>
-                        <li><strong>Marketing e Vendas:</strong> Campanhas personalizadas e conversões mais altas</li>
+                        <li>Especificação e handoffs falhos</li>
+                        <li>Teste manual e retrabalho constante</li>
+                        <li>Deploy com risco e pós-produção reativa</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Agentes Digitais</h3>
+                    <h3>Operação travada</h3>
                     <ul class="feature-list">
-                        <li><strong>Agentes de IA Operacionais:</strong> Assistentes digitais para executar tarefas de apoio</li>
-                        <li><strong>RH e Financeiro:</strong> Automação de áreas administrativas</li>
-                        <li><strong>Total Confiabilidade:</strong> Operação 24/7 sem falhas</li>
+                        <li>Planilhas, copiar/colar e processos “na cabeça”</li>
+                        <li>Integrações fracas entre sistemas</li>
+                        <li>Erros, atrasos, custo por transação alto</li>
                     </ul>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- Chatbots -->
-    <section style="background: var(--light-gray);">
+    <section id="servicos" class="benefits">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🤖</span>Chatbots com IA Treinados para o Seu Negócio</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 3rem;">Atendimento 24/7 com a cara da sua empresa.</p>
-            
+            <h2 class="section-title"><span class="section-icon">🧩</span>O que entregamos (serviços)</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Treinamento Exclusivios</h3>
+                    <h3>Consultoria de TI (SDLC completo)</h3>
                     <ul class="feature-list">
-                        <li><strong>Dados da Sua Empresa:</strong> Chatbots treinados com informações específicas</li>
-                        <li><strong>Respostas Assertivas:</strong> Contextuais e humanizadas</li>
-                        <li><strong>Aprendizado Contínuo:</strong> Evolui com cada interação</li>
+                        <li>Especificação, arquitetura, desenvolvimento e manutenção</li>
+                        <li>Testes, implantação, observabilidade e pós-produção</li>
+                        <li>Suporte ao cliente com eficiência e padronização</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Suporte Completo</h3>
+                    <h3>AI Solutions Architect</h3>
                     <ul class="feature-list">
-                        <li><strong>Suporte Sempre Ativo:</strong> Respostas instantâneas 24/7</li>
-                        <li><strong>Agendamentos:</strong> Coleta de dados automatizada</li>
-                        <li><strong>Integração Completa:</strong> CRMs, ERPs e bancos de dados</li>
+                        <li>Mapeamento de casos de uso e priorização por ROI</li>
+                        <li>Arquitetura de IA com governança, segurança e custos</li>
+                        <li>Blueprint para piloto e escala</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Presença Multicanal</h3>
+                    <h3>Automação de Processos</h3>
                     <ul class="feature-list">
-                        <li><strong>WhatsApp, Instagram, Telegram:</strong> Onde seus clientes estão</li>
-                        <li><strong>Site e Mais:</strong> Integração em todos os pontos de contato</li>
-                        <li><strong>Personalização Dinâmica:</strong> Experiência única em cada canal</li>
+                        <li>Automação ponta-a-ponta com integrações (ERP/CRM/ITSM)</li>
+                        <li>Orquestração, logs, alertas, retries e trilha</li>
+                        <li>Métricas de resultado (SLA, erro, tempo, custo)</li>
                     </ul>
                 </div>
+                <div class="feature-card">
+                    <h3>Processos e frameworks (engenharia)</h3>
+                    <ul class="feature-list">
+                        <li>Padronização do ciclo: spec → dev → teste → deploy → suporte</li>
+                        <li>Rituais e governança (backlog, SLO/SLA, qualidade)</li>
+                        <li>Playbooks e handover para o time interno</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- Transformação Digital -->
-    <section>
+    <section id="para-quem">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🌐</span>Transformação Digital com IA Customizada</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 3rem;">Cada solução é <strong>treinada sob medida para o seu negócio</strong>, sem pacotes genéricos.</p>
-            
+            <h2 class="section-title"><span class="section-icon">🎯</span>Para quem é</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Inteligência de Mercado</h3>
+                    <h3>1) Empresas de soluções de TI (software houses)</h3>
                     <ul class="feature-list">
-                        <li><strong>Conheça Seu Cliente:</strong> Personas precisas com insights de analytics</li>
-                        <li><strong>Análise de Mercado:</strong> Tendências e concorrência em tempo real</li>
-                        <li><strong>Marketing Preditivo:</strong> Oferta certa, no momento exato</li>
+                        <li>Um braço para desenvolvimento e manutenção sob demanda</li>
+                        <li>Melhoria de processos (gestão e desenvolvimento)</li>
+                        <li>IA/automação no SDLC e no suporte ao cliente</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Experiências Personalizadas</h3>
+                    <h3>2) Empresas com TI interna</h3>
                     <ul class="feature-list">
-                        <li><strong>Personalização em Escala:</strong> Experiências únicas em cada canal</li>
-                        <li><strong>Integração IoT e AR:</strong> Experiências digitais imersivas</li>
-                        <li><strong>Fidelização:</strong> Clientes engajados e satisfeitos</li>
+                        <li>Time saturado e backlog alto</li>
+                        <li>Pressão por escala, produtividade e custo</li>
+                        <li>Governança e integração com stack atual</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Gestão Inteligente</h3>
+                    <h3>3) Empresas que precisam de automação e processos</h3>
                     <ul class="feature-list">
-                        <li><strong>Gestão Ágil:</strong> Equipes capacitadas para inovar</li>
-                        <li><strong>Velocidade:</strong> Decisões rápidas baseadas em dados</li>
-                        <li><strong>Escalabilidade:</strong> Crescimento sem aumentar estrutura</li>
+                        <li>Vendas: captura, qualificação, nutrição, upsell e CRM</li>
+                        <li>Atendimento: FAQ, triagem, onboarding e suporte</li>
+                        <li>Operação: integração, ETL, ERP e comunicação de áreas</li>
                     </ul>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="benefits">
+    <section id="como-funciona">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🎯</span>Benefícios Reais para Sua Empresa</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>80% Maior Produtividade</h3>
-                    <p>Equipes mais eficientes e focadas</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>ROI Acelerado</h3>
-                    <p>Processos otimizados e custos reduzidos</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Decisões Inteligentes</h3>
-                    <p>Baseadas em dados concretos</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Ciclos Mais Curtos</h3>
-                    <p>Vendas mais rápidas e eficazes</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Experiências Únicas</h3>
-                    <p>Personalização que fideliza clientes</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Escalabilidade</h3>
-                    <p>Crescimento sem aumentar estrutura</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions -->
-    <section>
-        <div class="container">
-            <h2 class="section-title"><span class="section-icon">⚡</span>Desafios? Nós Ajudamos a Superar</h2>
-            
+            <h2 class="section-title"><span class="section-icon">🛠️</span>Como funciona (rápido e mensurável)</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Implementação Simples</h3>
-                    <ul class="feature-list">
-                        <li><strong>Dados de Qualidade:</strong> Para treinar a IA com precisão</li>
-                        <li><strong>Integração Simples:</strong> Via APIs e middleware</li>
-                        <li><strong>Projetos Piloto:</strong> Prove valor antes de investir</li>
-                    </ul>
+                    <h3>1) Diagnóstico</h3>
+                    <p>Mapeamento de gargalos, stack, riscos e oportunidades priorizadas.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <h3>Capacitação e Cultura</h3>
-                    <ul class="feature-list">
-                        <li><strong>Capacitação da Equipe:</strong> Para adotar a IA com confiança</li>
-                        <li><strong>Engajamento Cultural:</strong> Reduzir resistência à mudança</li>
-                        <li><strong>Metas Claras:</strong> Métricas objetivas para medir resultados</li>
-                    </ul>
+                    <h3>2) Blueprint</h3>
+                    <p>Arquitetura, integrações, governança e métricas (KPI/SLA/custo).</p>
                 </div>
+                <div class="feature-card">
+                    <h3>3) Piloto em produção</h3>
+                    <p>1 caso crítico funcionando com logs, alertas, retries e KPI.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>4) Escala contínua</h3>
+                    <p>Mais automações, padrões, handover e melhoria contínua mensal.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <section id="casos-de-uso">
+        <div class="container">
+            <h2 class="section-title"><span class="section-icon">⚡</span>Casos de uso com ROI rápido</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Escala no ciclo de software (SDLC)</h3>
+                    <ul class="feature-list">
+                        <li>Especificação e documentação consistentes</li>
+                        <li>Automação de testes, qualidade e releases</li>
+                        <li>Pós-produção com menos incidentes e mais previsibilidade</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Automação de vendas</h3>
+                    <ul class="feature-list">
+                        <li>Captura e qualificação de leads</li>
+                        <li>Nutrição, follow-up e propostas</li>
+                        <li>CRM atualizado e previsível</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Atendimento inteligente</h3>
+                    <ul class="feature-list">
+                        <li>FAQ automatizado e triagem</li>
+                        <li>Onboarding e tutoria guiada</li>
+                        <li>Suporte 24/7 com roteamento e contexto</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Integração operacional</h3>
+                    <ul class="feature-list">
+                        <li>Conecta sistemas (ERP/CRM/ITSM/BI)</li>
+                        <li>ETL e sincronização de dados</li>
+                        <li>Automação entre departamentos</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title"><span class="section-icon">❓</span>FAQ</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <details class="faq-item">
+                        <summary>Isso serve para software house e TI interna?</summary>
+                        <p>Sim. Ajustamos foco para SDLC, operação, integrações e suporte.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Precisa usar IA em tudo?</summary>
+                        <p>Não. Priorizamos automação e processos. IA entra quando aumenta throughput e qualidade.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Como lidam com governança e LGPD?</summary>
+                        <p>Controles de acesso, logs, rastreabilidade e desenho alinhado a políticas e auditoria.</p>
+                    </details>
+                </div>
+                <div class="feature-card">
+                    <details class="faq-item">
+                        <summary>Qual o primeiro passo?</summary>
+                        <p>Uma conversa rápida para entender stack, volume e gargalos. Você sai com um plano direto.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Em quanto tempo aparece resultado?</summary>
+                        <p>Normalmente 2–6 semanas para um piloto em produção; escala contínua depois.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Vocês também fazem manutenção?</summary>
+                        <p>Sim. Retainer mensal para evolução, correções e otimização de custo/qualidade.</p>
+                    </details>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
     <section class="final-cta" id="contato">
         <div class="container">
-            <h2 style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">✨ IA Sob Medida, para o Seu Negócio</h2>
-            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-weight: 600;">Chatbots, agentes digitais e automação inteligente — tudo <strong>treinado com os seus dados</strong> para entregar <strong>assertividade, personalização e impacto real</strong>.</p>
-            <a href="mailto:contato@x.ai" class="cta-button">👉 Descubra como transformar sua empresa</a>
+            <h2>Fale comigo no WhatsApp</h2>
+            <p>Me diga: <strong>seu segmento</strong>, <strong>tamanho do time</strong> e <strong>gargalo nº 1</strong>. Eu retorno com próximos passos.</p>
+            <a class="cta-button whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
+            <p class="cta-note">Ajuste o número em `data-whatsapp-number` no `index.html`.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Automate AI. Transformando negócios com inteligência artificial.</p>
+            <p>&copy; 2026 Automate AI — Consultoria de TI, Automação e IA.</p>
+            <p class="footer-links">
+                <a class="whatsapp-cta" href="#">Fale conosco agora — WhatsApp</a>
+            </p>
         </div>
     </footer>
 
