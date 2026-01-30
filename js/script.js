@@ -6,11 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const rawNumber = (document.body?.dataset?.whatsappNumber || '').trim();
     const whatsappNumber = rawNumber || '55XXXXXXXXXXX'; // atualize no index.html
     const defaultMessage =
-        'Olá! Quero conversar sobre Consultoria de TI, Automação e IA.\n' +
+        'Olá! Quero agendar o diagnóstico gratuito.\n\n' +
         'Empresa: \n' +
         'Segmento: \n' +
-        'Tamanho do time de TI: \n' +
-        'Gargalo nº 1: \n';
+        'Principal gargalo operacional: \n';
     const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
     document.querySelectorAll('.whatsapp-cta').forEach((link) => {
