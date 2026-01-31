@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindQuest Corporativo — Saúde Mental que Aumenta Produtividade</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FAFBFC;
+            --graphite: #1C1E21;
+            --petrol: #0A4D68;
+            --sage: #6B8E23;
+            --slate: #475569;
+            --light-gray: #E2E8F0;
+            --border: #CBD5E1;
+            --accent: #8B5CF6;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background: var(--white);
+            color: var(--graphite);
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            background: rgba(250, 251, 252, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #7C3AED;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #F3F0FF 0%, #FAFBFC 100%);
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 28px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .accent {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: var(--slate);
+            max-width: 720px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .stat-item {
+            border-left: 4px solid var(--accent);
+            padding-left: 24px;
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--graphite);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        /* Section */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 19px;
+            color: var(--slate);
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+        /* Problema Section */
+        .problema {
+            background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid #DC2626;
+        }
+
+        .problem-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #DC2626;
+        }
+
+        .problem-card p {
+            font-size: 16px;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* Solução Section */
+        .solucao {
+            background: linear-gradient(135deg, var(--accent) 0%, #7C3AED 100%);
+            color: white;
+        }
+
+        .solucao .section-label {
+            color: #DDD6FE;
+        }
+
+        .solucao .section-title,
+        .solucao .section-description {
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Benefícios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* Prova Social */
+        .prova-social {
+            background: #F8FAFC;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--slate);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--slate);
+        }
+
+        /* Sobre */
+        .sobre {
+            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
+            color: white;
+        }
+
+        .sobre .section-label {
+            color: var(--sage);
+        }
+
+        .sobre .section-title,
+        .sobre .section-description {
+            color: white;
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .sobre-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--sage);
+        }
+
+        .sobre-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .sobre-item p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Oferta */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 12px 32px rgba(139, 92, 246, 0.2);
+            position: relative;
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .pricing-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 20px 0;
+        }
+
+        .pricing-period {
+            font-size: 16px;
+            color: var(--slate);
+            margin-bottom: 32px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Urgência */
+        .urgencia {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+        }
+
+        .urgencia-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .urgencia-badge {
+            background: #DC2626;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #F8FAFC;
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 48px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .faq-item summary {
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-item p {
+            margin-top: 16px;
+            color: var(--slate);
+            line-height: 1.7;
+            padding-top: 16px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background: linear-gradient(135deg, var(--accent) 0%, #7C3AED 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-final p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .btn-large {
+            background: white;
+            color: var(--accent);
+            padding: 20px 56px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            background: #0F1419;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .problems-grid,
+            .features-grid,
+            .benefits-grid,
+            .testimonials-grid,
+            .sobre-content,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Automate AI">
+                </div>
+                <a href="#contato" class="btn-primary">Falar com Consultor</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">MindQuest Corporativo</div>
+            <h1>
+                Bem-estar que aumenta <br>
+                <span class="accent">produtividade real</span>
+            </h1>
+            <p>
+                Plataforma de saúde mental corporativa com IA que monitora, previne e intervém antes do 
+                burnout virar afastamento. Reduz absenteísmo, aumenta engajamento e melhora resultados.
+            </p>
+            <a href="#contato" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Agendar Demonstração</a>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">-38%</div>
+                    <div class="stat-label">Redução em afastamentos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">+24%</div>
+                    <div class="stat-label">Aumento de engajamento</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">ROI</div>
+                    <div class="stat-label">Mensurável em 60 dias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROBLEMA -->
+    <section class="problema">
+        <div class="container">
+            <div class="section-label">O Problema</div>
+            <h2 class="section-title">Burnout custa caro e ninguém vê chegando</h2>
+            <p class="section-description">
+                Colaboradores sobrecarregados fingem que está tudo bem até o dia que não conseguem mais trabalhar. 
+                Quando o RH percebe, já perdeu o funcionário, o conhecimento e o custo de reposição explode.
+            </p>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Afastamentos surpresa</h3>
+                    <p>
+                        Colaborador produtivo vira atestado médico da noite pro dia. Time sobrecarregado, 
+                        projetos atrasados, pressão aumenta e vira efeito dominó.
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <h3>Turnover silencioso</h3>
+                    <p>
+                        Seus melhores talentos saem sem você entender o motivo. Sobrecarga emocional não aparece 
+                        em pesquisa de clima, mas aparece no pedido de demissão.
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <h3>Custo invisível</h3>
+                    <p>
+                        Produtividade despencando, retrabalho aumentando, clima pesado. Ninguém mede o quanto 
+                        o burnout está custando até ser tarde demais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOLUÇÃO -->
+    <section class="solucao">
+        <div class="container">
+            <div class="section-label">A Solução</div>
+            <h2 class="section-title">IA que identifica risco antes do colapso</h2>
+            <p class="section-description">
+                MindQuest monitora indicadores comportamentais, produtividade e bem-estar em tempo real. 
+                Identifica padrões de risco e aciona intervenções personalizadas antes do burnout virar afastamento.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Monitoramento Preditivo</h3>
+                    <p>
+                        IA analisa padrões de comportamento, produtividade e engajamento. Detecta sinais de 
+                        sobrecarga emocional semanas antes do colapso.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Intervenções Personalizadas</h3>
+                    <p>
+                        Recomendações automáticas baseadas em perfil: pausas, check-ins, redistribuição de 
+                        demandas, acesso a suporte psicológico.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Dashboard para RH</h3>
+                    <p>
+                        Visão consolidada de saúde mental do time. Métricas de risco, engajamento, 
+                        produtividade e ROI de ações preventivas.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Integração com Benefícios</h3>
+                    <p>
+                        Conecta com plataformas de telemedicina, psicólogos parceiros e programas de bem-estar. 
+                        Jornada completa de cuidado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BENEFÍCIOS -->
+    <section class="beneficios">
+        <div class="container">
+            <div class="section-label">Benefícios</div>
+            <h2 class="section-title">O que você ganha</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Reduz Custo de Turnover</h3>
+                    <p>
+                        Evita perda de talentos por sobrecarga emocional. Retenção aumenta, custo de reposição 
+                        e onboarding despenca.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Produtividade Sustentável</h3>
+                    <p>
+                        Time engajado entrega mais e melhor. Previne burnout mantém performance alta sem 
+                        queimar pessoas no processo.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Decisões Data-Driven</h3>
+                    <p>
+                        Métricas reais de saúde mental e engajamento. RH sai do achismo e toma decisões 
+                        baseadas em dados concretos.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Employer Branding</h3>
+                    <p>
+                        Empresa que cuida de verdade atrai e retém os melhores. Diferencial competitivo no 
+                        mercado de talentos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROVA SOCIAL -->
+    <section class="prova-social">
+        <div class="container">
+            <div class="section-label">Resultados Reais</div>
+            <h2 class="section-title">O que clientes dizem</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Reduzimos afastamentos em 40% nos primeiros 6 meses. A plataforma identificou 
+                        12 colaboradores em risco crítico que conseguimos apoiar antes do colapso."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Carla Mendes</h4>
+                            <p>Head de RH • TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Finalmente temos dados reais sobre bem-estar do time. Conseguimos justificar 
+                        investimento em saúde mental com ROI mensurável."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Roberto Silva</h4>
+                            <p>Diretor de Pessoas • Startup XYZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Turnover caiu 35% após implementação. Os alertas preditivos nos deram tempo para 
+                        agir antes de perder talentos-chave."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ana Paula Costa</h4>
+                            <p>VP de Gente • Empresa de Serviços</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SOBRE -->
+    <section class="sobre">
+        <div class="container">
+            <div class="section-label">Sobre a Solução</div>
+            <h2 class="section-title">Por que MindQuest funciona</h2>
+            <p class="section-description">
+                Desenvolvido por psicólogos organizacionais e engenheiros de IA com experiência em 
+                saúde mental corporativa. Não é app de meditação, é inteligência preditiva real.
+            </p>
+
+            <div class="sobre-content">
+                <div class="sobre-item">
+                    <h3>Base Científica</h3>
+                    <p>
+                        Algoritmos treinados com dados de milhares de colaboradores. Validados por 
+                        psicólogos com expertise em burnout organizacional.
+                    </p>
+                </div>
+                <div class="sobre-item">
+                    <h3>LGPD Compliance</h3>
+                    <p>
+                        Dados anonimizados, criptografados e com consentimento explícito. Privacidade 
+                        total do colaborador, insights para o RH.
+                    </p>
+                </div>
+                <div class="sobre-item">
+                    <h3>Suporte Especializado</h3>
+                    <p>
+                        Equipe de psicólogos e consultores de RH para apoiar implementação, treinamento 
+                        e análise de resultados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. OFERTA -->
+    <section class="oferta">
+        <div class="container">
+            <div class="section-label">Planos</div>
+            <h2 class="section-title">Escolha o plano ideal</h2>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p class="pricing-value">Sob consulta</p>
+                    <p class="pricing-period">Até 50 colaboradores</p>
+                    <ul class="pricing-features">
+                        <li>Monitoramento básico de bem-estar</li>
+                        <li>Dashboard RH simplificado</li>
+                        <li>Alertas de risco crítico</li>
+                        <li>Relatórios mensais</li>
+                        <li>Suporte por email</li>
+                    </ul>
+                    <a href="#contato" class="btn-primary" style="width: 100%;">Solicitar Proposta</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Mais Popular</div>
+                    <h3>Professional</h3>
+                    <p class="pricing-value">Sob consulta</p>
+                    <p class="pricing-period">51 a 200 colaboradores</p>
+                    <ul class="pricing-features">
+                        <li>Monitoramento preditivo completo</li>
+                        <li>Dashboard avançado com IA</li>
+                        <li>Intervenções personalizadas</li>
+                        <li>Integração com benefícios</li>
+                        <li>Relatórios semanais e ROI</li>
+                        <li>Suporte prioritário</li>
+                        <li>Consultoria mensal</li>
+                    </ul>
+                    <a href="#contato" class="btn-primary" style="width: 100%;">Solicitar Proposta</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p class="pricing-value">Custom</p>
+                    <p class="pricing-period">Acima de 200 colaboradores</p>
+                    <ul class="pricing-features">
+                        <li>Tudo do Professional</li>
+                        <li>Customizações de plataforma</li>
+                        <li>Integração com HRIS</li>
+                        <li>API dedicada</li>
+                        <li>Suporte 24/7</li>
+                        <li>CSM dedicado</li>
+                        <li>SLA personalizado</li>
+                    </ul>
+                    <a href="#contato" class="btn-primary" style="width: 100%;">Falar com Especialista</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. URGÊNCIA -->
+    <section class="urgencia">
+        <div class="container">
+            <div class="urgencia-content">
+                <div class="urgencia-badge">Oferta Limitada</div>
+                <h2 class="section-title">Primeiros 10 clientes ganham diagnóstico gratuito</h2>
+                <p style="font-size: 19px; color: var(--slate); margin-bottom: 32px;">
+                    Análise completa de risco de burnout do seu time nos primeiros 30 dias. 
+                    Valor: R$ 12.000. Válido apenas para contratos fechados em fevereiro/2026.
+                </p>
+                <a href="#contato" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Garantir Meu Diagnóstico</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-label">Dúvidas Frequentes</div>
+            <h2 class="section-title">Perguntas e Respostas</h2>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Como funciona o monitoramento? É invasivo?</summary>
+                    <p>
+                        Zero invasão. Coletamos dados de engajamento (uso de ferramentas, participação em reuniões) 
+                        e pesquisas rápidas de bem-estar (30 segundos). Nada de monitorar mensagens ou telas. 
+                        Tudo com consentimento explícito e anonimizado para RH.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>A plataforma substitui psicólogos?</summary>
+                    <p>
+                        Não. MindQuest identifica riscos e conecta colaboradores com suporte profissional quando 
+                        necessário. Somos complementares aos programas de saúde mental, não substitutos.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Como garantem privacidade dos colaboradores?</summary>
+                    <p>
+                        LGPD total. Dados individuais são criptografados e nunca expostos ao RH. Dashboards mostram 
+                        tendências agregadas e alertam sobre "grupos de risco" sem identificar pessoas. Colaborador 
+                        controla o que compartilha.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quanto tempo até ver resultado?</summary>
+                    <p>
+                        Primeiros insights aparecem em 15 dias. ROI mensurável (redução de afastamentos, 
+                        aumento de engajamento) geralmente visível em 60-90 dias.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Funciona para trabalho remoto/híbrido?</summary>
+                    <p>
+                        Sim. Plataforma foi desenhada para times distribuídos. Inclusive detecta riscos específicos 
+                        de trabalho remoto (isolamento, sobrecarga de meetings, dificuldade de desconexão).
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Qual o investimento inicial?</summary>
+                    <p>
+                        Depende do tamanho do time e plano escolhido. Setup inicial incluso. Demonstração 
+                        gratuita com análise preliminar do seu time. Fale com nosso time comercial para proposta.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CTA FINAL -->
+    <section class="cta-final" id="contato">
+        <div class="container">
+            <h2>Pronto para reduzir burnout e aumentar produtividade?</h2>
+            <p>
+                Agende uma demonstração gratuita. Mostramos a plataforma funcionando e fazemos análise 
+                preliminar de risco do seu time. Sem custo, sem compromisso.
+            </p>
+            <a href="https://wa.me/55XXXXXXXXXXX" class="btn-large">Agendar Demonstração Gratuita</a>
+            <p style="margin-top: 24px; font-size: 14px; opacity: 0.8;">
+                Ou envie email para: contato@automateai.pt
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Automate AI — MindQuest Corporativo</p>
+            <p>
+                <a href="index.html">Voltar para Home</a> | 
+                <a href="#">Política de Privacidade</a> | 
+                <a href="#">Termos de Uso</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
