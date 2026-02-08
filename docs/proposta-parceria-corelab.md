@@ -35,30 +35,31 @@ A proposta financeira é híbrida, composta por um valor fixo para custeio opera
 ### A. Investimento Fixo Mensal (Retainer)
 Valor destinado a cobrir custos de prospecção, deslocamento, ferramentas e horas dedicadas.
 
-*   **Valor:** **€ 2.000,00 / mês**
+*   **Valor:** **€ 2.500,00 / mês**
 *   **Formato:** Prestação de Serviços (B2B).
 
 ### B. Comissão Variável (Success Fee)
 Comissão recorrente incidente sobre o faturamento líquido de cada contrato fechado.
 
-*   **Percentual:** **7% (sete por cento)** sobre o valor mensal faturado.
+*   **Percentual:** **6% (seis por cento)** sobre o valor mensal faturado.
 *   **Base de Cálculo:** Incide sobre todos os pacotes (Core, Growth, Enterprise).
 *   **Recorrência:** A comissão é paga mensalmente durante os primeiros **12 meses** de vigência de cada contrato.
-*   **Upsell:** Caso o cliente aumente o escopo (ex: migrar de Core para Growth), a comissão de 7% passa a incidir sobre o **novo valor total**.
+*   **Upsell:** Caso o cliente aumente o escopo (ex: migrar de Core para Growth), a comissão de 6% passa a incidir sobre o **novo valor total**.
 
 ---
 
-## 4. Simulação de Cenários (ROI para Corelab)
+## 4. Simulação de Cenários (ROI Agressivo)
 
-O modelo garante que a operação seja lucrativa para a Corelab desde o primeiro contrato fechado.
+O plano de ação prevê fechamento rápido (Mês 2) e escala acelerada, diluindo drasticamente o custo fixo.
 
-| Cenário | Vendas | Faturamento Gerado (Corelab) | Custo Fixo (Eu) | Custo Variável (7%) | Custo Total Vendas | Margem Corelab |
+| Cenário | Vendas Ativas | Faturamento (Corelab) | Custo Fixo (Eu) | Custo Variável (6%) | Custo Total | Margem Corelab |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Mês 1** | 0 Squads | € 0 | € 2.000 | € 0 | € 2.000 | - € 2.000 |
-| **Mês 3** | 1 Squad Core | € 18.000 | € 2.000 | € 1.260 | € 3.260 | **+ € 14.740** |
-| **Mês 6** | 2 Squads Core | € 36.000 | € 2.000 | € 2.520 | € 4.520 | **+ € 31.480** |
+| **Mês 1** | Setup/Hunting | € 0 | € 2.500 | € 0 | € 2.500 | - € 2.500 |
+| **Mês 2** | 1 Squad Core | € 18.000 | € 2.500 | € 1.080 | € 3.580 | **+ € 14.420** |
+| **Mês 4** | 2 Squads Core | € 36.000 | € 2.500 | € 2.160 | € 4.660 | **+ € 31.340** |
+| **Mês 6** | 3 Squads Core | € 54.000 | € 2.500 | € 3.240 | € 5.740 | **+ € 48.260** |
 
-*Nota: Com apenas 1 Squad vendida, o custo da minha operação representa ~18% da receita, caindo para ~12% com 2 Squads. Um custo de aquisição (CAC) extremamente competitivo para o setor.*
+*Nota: No Mês 2, a operação já é altamente lucrativa. No Mês 6, o custo total de vendas cai para apenas ~10% da receita gerada, um benchmark de eficiência excelente para vendas B2B enterprise.*
 
 ---
 
