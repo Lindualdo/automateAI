@@ -1,377 +1,1768 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automate AI - Soluções de IA e Automação para o Seu Negócio</title>
-    <meta name="description" content="Transforme sua empresa com inteligência artificial treinada sob medida. Chatbots, automação inteligente e agentes digitais para aumentar produtividade em até 80%.">
-    <meta name="keywords" content="IA, inteligência artificial, automação, chatbots, agentes digitais, transformação digital">
+    <title>Automate AI — Agência de IA e Automação Empresarial</title>
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Automate AI - Soluções de IA Sob Medida">
-    <meta property="og:description" content="Transforme sua empresa com IA treinada com seus dados. Produtividade até 80% maior.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://automate-ai.com">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Automate AI - Soluções de IA Sob Medida">
-    <meta name="twitter:description" content="IA treinada para seu negócio. Produtividade até 80% maior.">
-    
-    <link rel="canonical" href="https://automate-ai.com">
-    <link rel="icon" type="image/svg+xml" href="assets/automation-favicon.svg">
-    <link rel="shortcut icon" href="assets/automation-favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Critical CSS inline for above-the-fold -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #f59e0b;
-            --accent: #10b981;
-            --dark: #0f172a;
-            --gray: #374151;
-            --light-gray: #f9fafb;
-            --white: #ffffff;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: var(--white);
+
+        :root {
+            --white: #FAFBFC;
+            --graphite: #1C1E21;
+            --petrol: #0A4D68;
+            --sage: #6B8E23;
+            --slate: #475569;
+            --light-gray: #E2E8F0;
+            --border: #CBD5E1;
+            /* Degradê WhatsApp (igual modelo) */
+            --gradient-whats: linear-gradient(135deg, #00E5A0 0%, #00B37E 100%);
+            /* Degradê título hero (petrol → sage) */
+            --gradient-hero-title: linear-gradient(135deg, var(--graphite) 0%, var(--petrol) 45%, var(--sage) 100%);
         }
-        
+
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background: #F2F8F4;
+            color: var(--graphite);
+            line-height: 1.6;
+            font-size: 17px;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        /* Fundo sutil em verde claro (estilo Corelab) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    15deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(107, 142, 35, 0.03) 50px,
+                    rgba(107, 142, 35, 0.03) 51px
+                );
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
         }
-        
-        /* Critical: Header */
+
         header {
-            background: var(--white);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: fixed;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            background: rgba(242, 248, 244, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 100;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
-        
+
         .logo {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--graphite);
+            letter-spacing: -0.03em;
         }
-        
-        .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            max-height: 40px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: var(--petrol);
+        }
+
+        nav a {
+            color: var(--slate);
             text-decoration: none;
-            border-radius: 8px;
+            margin-left: 36px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--petrol);
+        }
+
+        .btn-primary {
+            background: var(--petrol);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 15px;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid var(--petrol);
         }
-        
-        .cta-button:hover {
+
+        .btn-primary:hover {
+            background: #083d54;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 16px rgba(10, 77, 104, 0.2);
         }
-        
-        /* Critical: Hero Section */
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--petrol);
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid var(--petrol);
+        }
+
+        .btn-secondary:hover {
+            background: var(--petrol);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section - dois cards (estilo Corelab) - cabe na primeira dobra */
         .hero {
-            background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 50%, #ffffff 100%);
-            padding: 8rem 0 4rem;
-            text-align: center;
+            padding: 32px 0 80px;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
         }
-        
-        .hero h1 {
-            font-size: 3.5rem;
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            min-height: 0;
+        }
+
+        .hero-card {
+            padding-right: 24px;
+        }
+
+        .hero-card-image {
+            position: relative;
+            overflow: hidden;
+            margin-right: -40px;
+            margin-left: 24px;
+            aspect-ratio: 4/3;
+        }
+
+        .hero-card-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 38%;
+            display: block;
+        }
+
+        .hero-card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(242, 248, 244, 0.92) 0%, rgba(242, 248, 244, 0.5) 35%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--petrol);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: slideUp 0.6s 0.2s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5.2vw, 62px);
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: slideUp 0.6s 0.3s forwards;
+            max-width: 540px;
+            background: var(--gradient-hero-title);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .hero p {
-            font-size: 1.25rem;
-            color: #1f2937;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .hero h1 .accent {
+            -webkit-text-fill-color: inherit;
         }
-        
-        .hero-cta {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            display: inline-block;
+
+        .hero-card p {
+            max-width: 100%;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--slate);
+            max-width: 100%;
+            margin-bottom: 20px;
+            line-height: 1.55;
+            opacity: 0;
+            animation: slideUp 0.6s 0.4s forwards;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 14px;
+            opacity: 0;
+            animation: slideUp 0.6s 0.5s forwards;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 72px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+            opacity: 0;
+            animation: slideUp 0.6s 0.6s forwards;
+        }
+
+        .stat-item {
+            border-left: 4px solid var(--petrol);
+            padding-left: 24px;
+            opacity: 0;
+            animation: slideUp 0.6s forwards;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.6s; }
+        .stat-item:nth-child(2) { animation-delay: 0.7s; }
+        .stat-item:nth-child(3) { animation-delay: 0.8s; }
+
+        .stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--graphite);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: var(--petrol);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 19px;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* Credenciais Section */
+        .credenciais {
+            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
+            color: white;
+        }
+
+        .credenciais .section-label {
+            color: var(--sage);
+        }
+
+        .credenciais .section-title {
+            color: white;
+        }
+
+        .credenciais .section-description {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .credenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .credencial-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 4px solid var(--sage);
             transition: all 0.3s;
         }
-        
-        .hero-cta:hover {
-            background: #d97706;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+
+        .credencial-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(4px);
         }
-        
-        /* Mobile responsive for critical elements */
+
+
+        .credencial-item h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .credencial-item p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.92);
+            letter-spacing: 0.01em;
+        }
+
+        .credenciais-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 56px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .credenciais-stat-item {
+            border-left: 4px solid var(--sage);
+            padding-left: 24px;
+        }
+
+        .credenciais-stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .credenciais-stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Serviços Grid */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .servico-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servico-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--petrol);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s;
+        }
+
+        .servico-card:hover {
+            border-color: var(--petrol);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(10, 77, 104, 0.1);
+        }
+
+        .servico-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .servico-card-impact {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--petrol);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .servico-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--graphite);
+        }
+
+        .servico-card p {
+            font-size: 16px;
+            color: var(--slate);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .servico-card ul {
+            list-style: none;
+        }
+
+        .servico-card li {
+            font-size: 15px;
+            color: var(--slate);
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .servico-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+            font-weight: 700;
+        }
+
+        /* Cases/SaaS Section */
+        .cases {
+            background: #F8FAFC;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .case-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 77, 104, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 77, 104, 0.15);
+            border-color: var(--petrol);
+        }
+
+        .case-card:hover::after {
+            opacity: 1;
+        }
+
+        .case-header {
+            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
+            padding: 40px 32px;
+            position: relative;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .case-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .case-category {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .case-body {
+            padding: 32px;
+        }
+
+        .case-description {
+            font-size: 16px;
+            color: var(--slate);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .case-target {
+            font-size: 14px;
+            color: var(--petrol);
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .case-target::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+        }
+
+        .case-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--petrol);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .case-link::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+
+        .case-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Processo Timeline - 2 cards por linha */
+        .processo-timeline {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .processo-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 32px;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .processo-step:hover {
+            border-color: var(--petrol);
+            transform: translateX(8px);
+            box-shadow: 0 8px 16px rgba(10, 77, 104, 0.08);
+        }
+
+        .step-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--petrol);
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-duration {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: var(--sage);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .step-description {
+            font-size: 16px;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
+            color: white;
+            position: relative;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .cta-button-large {
+            background: var(--sage);
+            color: white;
+            padding: 20px 56px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid var(--sage);
+            box-shadow: 0 4px 12px rgba(107, 142, 35, 0.2);
+        }
+
+        .cta-button-large:hover {
+            background: linear-gradient(135deg, #00B37E 0%, #009966 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 229, 160, 0.4);
+        }
+
+        .cta-section .cta-button-large {
+            background: var(--gradient-whats);
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            background: #0F1419;
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--sage);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .container {
+                padding: 0 24px;
             }
-            
-            .hero p {
-                font-size: 1.1rem;
+
+            header {
+                padding: 10px 0;
             }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
+
+            .logo img {
+                height: 32px;
+                max-height: 36px;
             }
-            
+
+            nav {
+                display: none;
+            }
+
             .hero {
-                padding: 6rem 0 3rem;
+                padding: 24px 0 60px;
+            }
+
+            .hero-stats {
+                margin-top: 56px;
+                padding-top: 40px;
+            }
+
+            .hero h1 {
+                max-width: none;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-card {
+                padding-right: 0;
+            }
+
+            .hero-card-image {
+                order: -1;
+                aspect-ratio: 16/10;
+                margin-right: -24px;
+                margin-left: -24px;
+            }
+
+            .hero-card-image::after {
+                background: linear-gradient(180deg, rgba(242, 248, 244, 0.5) 0%, transparent 40%);
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .credenciais-grid,
+            .credenciais-stats,
+            .servicos-grid,
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credenciais-stats {
+                margin-top: 40px;
+                padding-top: 40px;
+            }
+
+            .processo-timeline {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .processo-step {
+                grid-template-columns: 60px 1fr;
+                gap: 20px;
+                padding: 24px;
+            }
+
+            .step-number {
+                font-size: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero WhatsApp CTAs (home-whats) */
+        .whatsapp-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        .btn-primary .whatsapp-icon {
+            margin-right: 4px;
+        }
+
+        .hero-ctas .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-whats);
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
+        }
+
+        .hero-ctas .btn-primary:hover {
+            background: linear-gradient(135deg, #00B37E 0%, #009966 100%);
+            box-shadow: 0 8px 24px rgba(0, 229, 160, 0.35);
+        }
+
+        .header-cta-whats {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-whats) !important;
+            border-color: transparent !important;
+            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
+        }
+
+        .header-cta-whats:hover {
+            background: linear-gradient(135deg, #00B37E 0%, #009966 100%) !important;
+            box-shadow: 0 8px 24px rgba(0, 229, 160, 0.35);
+        }
+
+        .btn-microcopy {
+            font-size: 15px;
+            color: var(--slate);
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn-microcopy span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-microcopy span::before {
+            content: '✓';
+            color: var(--sage);
+            font-weight: 700;
+        }
+
+        /* WhatsApp Preview Section */
+        .whatsapp-preview-section {
+            padding: 100px 0;
+        }
+
+        .preview-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            margin-top: 48px;
+        }
+
+        .preview-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            border-left: 4px solid var(--petrol);
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            border-color: var(--petrol);
+            transform: translateX(4px);
+            box-shadow: 0 8px 16px rgba(10, 77, 104, 0.08);
+        }
+
+        .benefit-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--petrol);
+            flex-shrink: 0;
+            opacity: 0.8;
+        }
+
+        .benefit-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--graphite);
+        }
+
+        .benefit-content p {
+            color: var(--slate);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .chat-mockup {
+            background: #E5DDD5;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 12px 32px rgba(10, 77, 104, 0.15);
+            max-width: 380px;
+            margin: 0 auto;
+            border: 2px solid var(--border);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 16px -20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .chat-info h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .chat-status {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            padding: 12px 14px;
+            border-radius: 8px;
+            max-width: 90%;
+            font-size: 14px;
+        }
+
+        .message-bot {
+            background: white;
+            align-self: flex-start;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            color: var(--graphite);
+        }
+
+        .message p {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .message-options {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .message-option {
+            background: var(--light-gray);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            text-align: center;
+            color: var(--graphite);
+            border: 1px solid var(--border);
+        }
+
+        .chat-caption {
+            text-align: center;
+            margin-top: 12px;
+            color: var(--slate);
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        /* Proof cards (Cases de Sucesso - home-whats) */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .proof-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proof-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--petrol);
+        }
+
+        .proof-card:hover {
+            border-color: var(--petrol);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(10, 77, 104, 0.1);
+        }
+
+        .proof-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .proof-stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--petrol);
+        }
+
+        .proof-stat-label {
+            font-size: 13px;
+            color: var(--slate);
+        }
+
+        .proof-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--graphite);
+        }
+
+        .proof-description {
+            color: var(--slate);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .proof-company {
+            display: inline-block;
+            background: var(--light-gray);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        .cta-urgency {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Floating WhatsApp (igual modelo) */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            animation: floatBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .floating-whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+        }
+
+        .floating-whatsapp-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .floating-whatsapp-main {
+            font-size: 0.9375rem;
+        }
+
+        .floating-whatsapp-sub {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .online-indicator {
+            width: 8px;
+            height: 8px;
+            background: #00ff00;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+        @media (max-width: 768px) {
+            .preview-container {
+                grid-template-columns: 1fr;
+            }
+            .btn-microcopy {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .floating-whatsapp-text {
+                display: none;
+            }
+            .floating-whatsapp-btn {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                padding: 0;
+                justify-content: center;
             }
         }
     </style>
-    
-    <!-- Load main CSS asynchronously -->
-    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">🤖 Automate AI</div>
-                <a href="#contato" class="cta-button">Fale Conosco</a>
+                <div class="logo">
+                    <img src="assets/logo-automate-ai.png" alt="Automate AI" loading="lazy">
+                </div>
+                <nav>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#cases">Cases</a>
+                    <a href="#processo">Processo</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="btn-primary header-cta-whats" target="_blank" rel="noopener">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Diagnóstico Gratuito
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>🚀 Soluções de IA e Automação para o Seu Negócio</h1>
-            <p>Transforme sua empresa com inteligência artificial <strong>treinada sob medida</strong>. Ganhe eficiência, reduza custos e escale resultados com soluções exclusivas para o seu contexto.</p>
-            <a href="#solucoes" class="hero-cta">Descobrir Soluções</a>
+            <div class="hero-inner">
+                <div class="hero-card">
+                    <div class="hero-label">Agência Enterprise de IA e Automação</div>
+                    <h1>
+                        Transforme produtividade em <span class="accent">lucro mensurável</span><br>
+                        com automação e IA
+                    </h1>
+                    <p>
+                        Automações e agentes de IA que reduzem custos, eliminam tarefas manuais e entregam retorno em até 30 dias.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="btn-primary" target="_blank" rel="noopener">
+                            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Falar com Especialista no WhatsApp
+                        </a>
+                        <a href="#cases" class="btn-secondary">Ver Cases de Sucesso</a>
+                    </div>
+                    <div class="btn-microcopy">
+                        <span>Atendimento imediato</span>
+                        <span>Diagnóstico em 10min</span>
+                        <span>Sem compromisso</span>
+                    </div>
+                </div>
+
+                <div class="hero-card-image">
+                    <img src="assets/hero-image.webp" alt="IA e automação empresarial — dados, colaboração e inovação digital" loading="eager">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Automação Inteligente -->
-    <section id="solucoes">
+    <section class="credenciais">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🔧</span>Automação Inteligente com IA</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 3rem;">Deixe que a IA cuide das tarefas repetitivas e libere sua equipe para pensar grande.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Processos Otimizados</h3>
-                    <ul class="feature-list">
-                        <li><strong>Otimização de Processos:</strong> Automação em RH, contabilidade, compliance e P&D</li>
-                        <li><strong>Leads Qualificados:</strong> A IA identifica e engaja clientes ideais em tempo real</li>
-                        <li><strong>Previsão de Vendas:</strong> Antecipe tendências e acerte no pipeline</li>
+            <div class="section-header">
+                <div class="section-label">Por que Automate AI</div>
+                <h2 class="section-title">Como funciona na prática</h2>
+                <p class="section-description">
+                    Identificamos exatamente onde sua operação está desperdiçando tempo, dinheiro e capacidade humana, 
+                    e priorizamos apenas o que gera retorno real.
+                </p>
+            </div>
+
+            <div class="credenciais-grid">
+                <div class="credencial-item reveal">
+                    <h3>Diagnóstico Estratégico</h3>
+                    <p>
+                        Identificamos exatamente onde sua operação está perdendo tempo, dinheiro e capacidade produtiva. 
+                        Mapeamos processos, sistemas e fluxos críticos para encontrar gargalos reais.
+                    </p>
+                </div>
+                <div class="credencial-item reveal">
+                    <h3>Priorização por ROI</h3>
+                    <p>
+                        Nem tudo deve ser automatizado. Classificamos as oportunidades pelo retorno financeiro, complexidade 
+                        e velocidade de implementação, focando apenas no que gera ROI claro e mensurável.
+                    </p>
+                </div>
+                <div class="credencial-item reveal">
+                    <h3>Piloto em 30 dias</h3>
+                    <p>
+                        Implementamos um piloto funcional em ambiente real, com integrações, métricas e governança. 
+                        Você vê a automação rodando, gerando resultado, antes de qualquer decisão de escala.
+                    </p>
+                </div>
+                <div class="credencial-item reveal">
+                    <h3>Governança e Controle Total</h3>
+                    <p>
+                        Todas as automações operam com rastreabilidade, logs, auditoria e controle de acesso. 
+                        Sua empresa mantém domínio total sobre dados, decisões e evolução dos sistemas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="credenciais-stats">
+                <div class="credenciais-stat-item">
+                    <div class="credenciais-stat-value">30d</div>
+                    <div class="credenciais-stat-label">Primeiro piloto em produção</div>
+                </div>
+                <div class="credenciais-stat-item">
+                    <div class="credenciais-stat-value">100%</div>
+                    <div class="credenciais-stat-label">Governança e auditoria</div>
+                </div>
+                <div class="credenciais-stat-item">
+                    <div class="credenciais-stat-value">ROI</div>
+                    <div class="credenciais-stat-label">Mensurável desde dia 1</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="whatsapp-preview-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Como funciona</div>
+                <h2 class="section-title">Diagnóstico Gratuito em 3 Passos</h2>
+                <p class="section-description">
+                    10 minutos de conversa para identificar exatamente onde você está perdendo dinheiro.
+                </p>
+            </div>
+            <div class="preview-container">
+                <div class="preview-benefits">
+                    <div class="benefit-item reveal">
+                        <div class="benefit-number">1</div>
+                        <div class="benefit-content">
+                            <h3>Clique e inicie conversa</h3>
+                            <p>Nossa especialista em IA responde imediatamente no WhatsApp</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item reveal">
+                        <div class="benefit-number">2</div>
+                        <div class="benefit-content">
+                            <h3>Responda 4 perguntas rápidas</h3>
+                            <p>Setor • Maior gargalo • Tamanho da operação • Expectativa de resultado</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item reveal">
+                        <div class="benefit-number">3</div>
+                        <div class="benefit-content">
+                            <h3>Receba diagnóstico na hora</h3>
+                            <p>3-5 automações priorizadas por ROI + timeline realista + próximos passos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-mockup reveal">
+                    <div class="chat-header">
+                        <div class="chat-avatar">AI</div>
+                        <div class="chat-info">
+                            <h4>AutomateAI</h4>
+                            <div class="chat-status">● online agora</div>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message message-bot">
+                            <p>Olá! Sou a Ana, especialista em automação da AutomateAI.</p>
+                            <p>Vou fazer um diagnóstico rápido da sua operação em 4 perguntas.</p>
+                            <p><strong>Em qual setor sua empresa atua?</strong></p>
+                            <div class="message-options">
+                                <div class="message-option">Saúde/Clínicas</div>
+                                <div class="message-option">Imobiliário</div>
+                                <div class="message-option">Varejo/E-commerce</div>
+                                <div class="message-option">Serviços B2B</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="chat-caption">Exemplo real da conversa que você terá →</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">O que fazemos</div>
+                <h2 class="section-title">Serviços de Automação e IA</h2>
+                <p class="section-description">
+                    Desenvolvemos soluções sob medida para automatizar processos críticos, 
+                    integrar sistemas e aplicar IA onde realmente gera valor.
+                </p>
+            </div>
+
+            <div class="servicos-grid">
+                <div class="servico-card reveal">
+                    <p class="servico-card-impact">Projetamos a espinha dorsal de IA da sua empresa para escalar com segurança e controle.</p>
+                    <h3>AI Solutions Architect</h3>
+                    <p>
+                        Arquitetura de IA com governança, segurança e integração completa aos 
+                        seus sistemas existentes.
+                    </p>
+                    <ul>
+                        <li>Casos de uso priorizados por ROI</li>
+                        <li>Estratégia de dados (RAG, embeddings)</li>
+                        <li>MLOps e monitoramento de custos</li>
+                        <li>Compliance e LGPD</li>
                     </ul>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Conteúdo e Marketing</h3>
-                    <ul class="feature-list">
-                        <li><strong>Conteúdo em Escala:</strong> Geração de artigos, posts e relatórios sob demanda</li>
-                        <li><strong>Auditorias Inteligentes:</strong> Monitoramento contínuo de sites e redes sociais</li>
-                        <li><strong>Marketing e Vendas:</strong> Campanhas personalizadas e conversões mais altas</li>
+
+                <div class="servico-card reveal">
+                    <p class="servico-card-impact">Eliminamos tarefas manuais que hoje consomem horas da sua equipe todos os dias.</p>
+                    <h3>Automação de Processos</h3>
+                    <p>
+                        Automatizamos fluxos end-to-end com integrações robustas e métricas 
+                        de resultado em tempo real.
+                    </p>
+                    <ul>
+                        <li>Integrações com ERP, CRM, ITSM</li>
+                        <li>Orquestração, logs e alertas</li>
+                        <li>Dashboard de KPIs em tempo real</li>
+                        <li>Trilha de auditoria completa</li>
                     </ul>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Agentes Digitais</h3>
-                    <ul class="feature-list">
-                        <li><strong>Agentes de IA Operacionais:</strong> Assistentes digitais para executar tarefas de apoio</li>
-                        <li><strong>RH e Financeiro:</strong> Automação de áreas administrativas</li>
-                        <li><strong>Total Confiabilidade:</strong> Operação 24/7 sem falhas</li>
+
+                <div class="servico-card reveal">
+                    <p class="servico-card-impact">Preparamos seu time para operar IA sem dependência constante de fornecedores.</p>
+                    <h3>Treinamento e Capacitação</h3>
+                    <p>
+                        Preparamos sua equipe para usar, manter e evoluir as soluções de IA 
+                        implementadas.
+                    </p>
+                    <ul>
+                        <li>Workshops práticos</li>
+                        <li>Documentação técnica detalhada</li>
+                        <li>Frameworks customizados</li>
+                        <li>Suporte contínuo</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Chatbots -->
-    <section style="background: var(--light-gray);">
+    <section id="cases" class="cases">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🤖</span>Chatbots com IA Treinados para o Seu Negócio</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 3rem;">Atendimento 24/7 com a cara da sua empresa.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Treinamento Exclusivios</h3>
-                    <ul class="feature-list">
-                        <li><strong>Dados da Sua Empresa:</strong> Chatbots treinados com informações específicas</li>
-                        <li><strong>Respostas Assertivas:</strong> Contextuais e humanizadas</li>
-                        <li><strong>Aprendizado Contínuo:</strong> Evolui com cada interação</li>
-                    </ul>
+            <div class="section-header">
+                <div class="section-label">Resultados Reais</div>
+                <h2 class="section-title">Cases de Sucesso</h2>
+                <p class="section-description">
+                    Empresas que transformaram processos em vantagem competitiva mensurável.
+                </p>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card reveal">
+                    <div class="proof-stats">
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">-67%</div>
+                            <div class="proof-stat-label">Tempo atendimento</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">340%</div>
+                            <div class="proof-stat-label">ROI em 90 dias</div>
+                        </div>
+                    </div>
+                    <h3 class="proof-title">Automação Completa de Agendamento</h3>
+                    <p class="proof-description">
+                        Clínica odontológica com 4 unidades automatizou agendamento, lembretes e follow-up pós-consulta. 
+                        Equipe liberada para atendimento de alto valor.
+                    </p>
+                    <span class="proof-company">Rede de Clínicas • 4 unidades</span>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Suporte Completo</h3>
-                    <ul class="feature-list">
-                        <li><strong>Suporte Sempre Ativo:</strong> Respostas instantâneas 24/7</li>
-                        <li><strong>Agendamentos:</strong> Coleta de dados automatizada</li>
-                        <li><strong>Integração Completa:</strong> CRMs, ERPs e bancos de dados</li>
-                    </ul>
+
+                <div class="proof-card reveal">
+                    <div class="proof-stats">
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">+156%</div>
+                            <div class="proof-stat-label">Conversão leads</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">24/7</div>
+                            <div class="proof-stat-label">Atendimento IA</div>
+                        </div>
+                    </div>
+                    <h3 class="proof-title">IA para Qualificação de Leads</h3>
+                    <p class="proof-description">
+                        Imobiliária implementou triagem inteligente com IA conversacional. Leads qualificados automaticamente 
+                        e agendamento de visitas sem intervenção humana.
+                    </p>
+                    <span class="proof-company">Grupo Imobiliário • 200M€ portfólio</span>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Presença Multicanal</h3>
-                    <ul class="feature-list">
-                        <li><strong>WhatsApp, Instagram, Telegram:</strong> Onde seus clientes estão</li>
-                        <li><strong>Site e Mais:</strong> Integração em todos os pontos de contato</li>
-                        <li><strong>Personalização Dinâmica:</strong> Experiência única em cada canal</li>
-                    </ul>
+
+                <div class="proof-card reveal">
+                    <div class="proof-stats">
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">-42%</div>
+                            <div class="proof-stat-label">Custos operacionais</div>
+                        </div>
+                        <div class="proof-stat">
+                            <div class="proof-stat-value">18h</div>
+                            <div class="proof-stat-label">Economizadas/semana</div>
+                        </div>
+                    </div>
+                    <h3 class="proof-title">Integração ERP + CRM + ITSM</h3>
+                    <p class="proof-description">
+                        Empresa de serviços B2B eliminou trabalho manual entre sistemas. Orquestração completa com 
+                        dashboards de KPIs em tempo real e trilha de auditoria.
+                    </p>
+                    <span class="proof-company">Consultoria Tech • 85 colaboradores</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Transformação Digital -->
-    <section>
+    <section id="processo">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🌐</span>Transformação Digital com IA Customizada</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 3rem;">Cada solução é <strong>treinada sob medida para o seu negócio</strong>, sem pacotes genéricos.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Inteligência de Mercado</h3>
-                    <ul class="feature-list">
-                        <li><strong>Conheça Seu Cliente:</strong> Personas precisas com insights de analytics</li>
-                        <li><strong>Análise de Mercado:</strong> Tendências e concorrência em tempo real</li>
-                        <li><strong>Marketing Preditivo:</strong> Oferta certa, no momento exato</li>
-                    </ul>
+            <div class="section-header">
+                <div class="section-label">Como trabalhamos</div>
+                <h2 class="section-title">Processo de Implementação</h2>
+                <p class="section-description">
+                    Metodologia estruturada para garantir resultados mensuráveis desde o primeiro dia.
+                </p>
+            </div>
+
+            <div class="processo-timeline">
+                <div class="processo-step reveal">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Diagnóstico Gratuito</h3>
+                        <div class="step-duration">45 minutos</div>
+                        <p class="step-description">
+                            Mapeamos processos críticos, identificamos gargalos e priorizamos oportunidades por ROI real. 
+                            Você sai com 3-5 automações claras, viáveis e com timeline de implementação.
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Experiências Personalizadas</h3>
-                    <ul class="feature-list">
-                        <li><strong>Personalização em Escala:</strong> Experiências únicas em cada canal</li>
-                        <li><strong>Integração IoT e AR:</strong> Experiências digitais imersivas</li>
-                        <li><strong>Fidelização:</strong> Clientes engajados e satisfeitos</li>
-                    </ul>
+
+                <div class="processo-step reveal">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Blueprint Técnico</h3>
+                        <div class="step-duration">1 semana</div>
+                        <p class="step-description">
+                            Desenhamos arquitetura, integrações, segurança e governança. 
+                            Plano 30/60/90 dias com milestones e KPIs claros.
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Gestão Inteligente</h3>
-                    <ul class="feature-list">
-                        <li><strong>Gestão Ágil:</strong> Equipes capacitadas para inovar</li>
-                        <li><strong>Velocidade:</strong> Decisões rápidas baseadas em dados</li>
-                        <li><strong>Escalabilidade:</strong> Crescimento sem aumentar estrutura</li>
-                    </ul>
+
+                <div class="processo-step reveal">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Piloto em Produção</h3>
+                        <div class="step-duration">30 dias</div>
+                        <p class="step-description">
+                            1 fluxo crítico funcionando em produção com integrações reais, logs, 
+                            alertas e dashboard de métricas (SLA, tempo, erro, custo).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="processo-step reveal">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Escala e Otimização</h3>
+                        <div class="step-duration">Contínuo</div>
+                        <p class="step-description">
+                            Expansão para novos processos, treinamento de equipe, handover e 
+                            melhoria contínua com retainer mensal.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="benefits">
+    <section class="cta-section" id="diagnostico">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">🎯</span>Benefícios Reais para Sua Empresa</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>80% Maior Produtividade</h3>
-                    <p>Equipes mais eficientes e focadas</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>ROI Acelerado</h3>
-                    <p>Processos otimizados e custos reduzidos</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Decisões Inteligentes</h3>
-                    <p>Baseadas em dados concretos</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Ciclos Mais Curtos</h3>
-                    <p>Vendas mais rápidas e eficazes</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Experiências Únicas</h3>
-                    <p>Personalização que fideliza clientes</p>
-                </div>
-                <div class="benefit-item">
-                    <h3>Escalabilidade</h3>
-                    <p>Crescimento sem aumentar estrutura</p>
-                </div>
+            <h2>Pronto para automatizar com inteligência?</h2>
+            <p>
+                Agende um diagnóstico gratuito de 10 minutos. Identificamos seu maior gargalo e você recebe 
+                3-5 oportunidades priorizadas por ROI. Atendimento via WhatsApp, sem custo, sem compromisso.
+            </p>
+            <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="cta-button-large" target="_blank" rel="noopener">
+                Iniciar Diagnóstico no WhatsApp Agora
+            </a>
+            <div class="cta-urgency">
+                <span>23 empresas fizeram diagnóstico esta semana</span>
+                <span>Tempo médio de resposta: 2 minutos</span>
             </div>
         </div>
     </section>
 
-    <!-- Solutions -->
-    <section>
+    <footer id="contato">
         <div class="container">
-            <h2 class="section-title"><span class="section-icon">⚡</span>Desafios? Nós Ajudamos a Superar</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Implementação Simples</h3>
-                    <ul class="feature-list">
-                        <li><strong>Dados de Qualidade:</strong> Para treinar a IA com precisão</li>
-                        <li><strong>Integração Simples:</strong> Via APIs e middleware</li>
-                        <li><strong>Projetos Piloto:</strong> Prove valor antes de investir</li>
-                    </ul>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>AutomateAI</h3>
+                    <p>
+                        Agência enterprise de IA e automação. Transformamos processos em 
+                        vantagem competitiva com arquitetura sólida e resultados mensuráveis.
+                    </p>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>Capacitação e Cultura</h3>
-                    <ul class="feature-list">
-                        <li><strong>Capacitação da Equipe:</strong> Para adotar a IA com confiança</li>
-                        <li><strong>Engajamento Cultural:</strong> Reduzir resistência à mudança</li>
-                        <li><strong>Metas Claras:</strong> Métricas objetivas para medir resultados</li>
-                    </ul>
+                <div class="footer-column">
+                    <h4>Serviços</h4>
+                    <a href="#servicos">AI Solutions</a>
+                    <a href="#servicos">Automação</a>
+                    <a href="#servicos">Treinamento</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Produtos</h4>
+                    <a href="#">MindQuest</a>
+                    <a href="#">DentalFlow</a>
+                    <a href="#">RealtyBot</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <a href="#processo">Processo</a>
+                    <a href="#diagnostico">Contato</a>
+                    <a href="#">Política de Privacidade</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta" id="contato">
-        <div class="container">
-            <h2 style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">✨ IA Sob Medida, para o Seu Negócio</h2>
-            <p style="color: #ffffff; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-weight: 600;">Chatbots, agentes digitais e automação inteligente — tudo <strong>treinado com os seus dados</strong> para entregar <strong>assertividade, personalização e impacto real</strong>.</p>
-            <a href="mailto:contato@x.ai" class="cta-button">👉 Descubra como transformar sua empresa</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Automate AI. Transformando negócios com inteligência artificial.</p>
+            <div class="footer-bottom">
+                © 2026 Automate AI — Agência de IA e Automação Empresarial
+            </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="floating-whatsapp-btn" target="_blank" rel="noopener">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <div class="floating-whatsapp-text">
+                <span class="floating-whatsapp-main">Diagnóstico Gratuito</span>
+                <span class="floating-whatsapp-sub">Resposta imediata</span>
+            </div>
+            <span class="online-indicator"></span>
+        </a>
+    </div>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

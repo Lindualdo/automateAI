@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automate AI — Agência de IA e Automação Empresarial</title>
+    <title>AutomateAI — Reduza 42% dos Custos com Automação e IA</title>
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -28,9 +28,7 @@
             --slate: #475569;
             --light-gray: #E2E8F0;
             --border: #CBD5E1;
-            /* Degradê WhatsApp (igual modelo) */
             --gradient-whats: linear-gradient(135deg, #00E5A0 0%, #00B37E 100%);
-            /* Degradê título hero (petrol → sage) */
             --gradient-hero-title: linear-gradient(135deg, var(--graphite) 0%, var(--petrol) 45%, var(--sage) 100%);
         }
 
@@ -44,7 +42,6 @@
             letter-spacing: -0.01em;
         }
 
-        /* Fundo sutil em verde claro (estilo Corelab) */
         body::before {
             content: '';
             position: fixed;
@@ -99,9 +96,9 @@
         }
 
         .logo img {
-            height: 36px;
+            height: 38px;
             width: auto;
-            max-height: 40px;
+            max-width: 180px;
             object-fit: contain;
         }
 
@@ -123,7 +120,7 @@
         }
 
         .btn-primary {
-            background: var(--petrol);
+            background: var(--gradient-whats);
             color: white;
             padding: 12px 28px;
             border-radius: 6px;
@@ -131,14 +128,17 @@
             font-weight: 600;
             font-size: 15px;
             transition: all 0.3s;
-            display: inline-block;
-            border: 2px solid var(--petrol);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
         }
 
         .btn-primary:hover {
-            background: #083d54;
+            background: linear-gradient(135deg, #00B37E 0%, #009966 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(10, 77, 104, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 229, 160, 0.35);
         }
 
         .btn-secondary {
@@ -160,11 +160,21 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section - dois cards (estilo Corelab) - cabe na primeira dobra */
+        .whatsapp-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        /* Hero Section */
         .hero {
             padding: 32px 0 80px;
             opacity: 0;
             animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
         .hero-inner {
@@ -172,11 +182,95 @@
             grid-template-columns: 1fr 1fr;
             gap: 48px;
             align-items: start;
-            min-height: 0;
         }
 
         .hero-card {
             padding-right: 24px;
+        }
+
+        .kicker {
+            display: inline-block;
+            color: var(--sage);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            background: var(--gradient-hero-title);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 19px;
+            color: var(--slate);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            max-width: 520px;
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .hero-metric {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            text-align: center;
+        }
+
+        .hero-metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--petrol);
+            margin-bottom: 4px;
+        }
+
+        .hero-metric-label {
+            font-size: 12px;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .btn-microcopy {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--slate);
+        }
+
+        .btn-microcopy span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-microcopy span::before {
+            content: '✓';
+            color: var(--sage);
+            font-weight: 700;
         }
 
         .hero-card-image {
@@ -209,647 +303,577 @@
             pointer-events: none;
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .hero-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 13px;
-            color: var(--petrol);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-            margin-bottom: 16px;
-            opacity: 0;
-            animation: slideUp 0.6s 0.2s forwards;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 5.2vw, 62px);
-            font-weight: 800;
-            line-height: 1.12;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-            opacity: 0;
-            animation: slideUp 0.6s 0.3s forwards;
-            max-width: 540px;
-            background: var(--gradient-hero-title);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero h1 .accent {
-            -webkit-text-fill-color: inherit;
-        }
-
-        .hero-card p {
-            max-width: 100%;
-        }
-
-        .hero p {
-            font-size: 17px;
-            color: var(--slate);
-            max-width: 100%;
-            margin-bottom: 20px;
-            line-height: 1.55;
-            opacity: 0;
-            animation: slideUp 0.6s 0.4s forwards;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 14px;
-            opacity: 0;
-            animation: slideUp 0.6s 0.5s forwards;
-        }
-
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
-            margin-top: 72px;
-            padding-top: 48px;
+            margin-top: 40px;
+            padding-top: 40px;
             border-top: 1px solid var(--border);
-            opacity: 0;
-            animation: slideUp 0.6s 0.6s forwards;
         }
 
-        .stat-item {
-            border-left: 4px solid var(--petrol);
-            padding-left: 24px;
-            opacity: 0;
-            animation: slideUp 0.6s forwards;
+        .hero-stat {
+            text-align: center;
         }
 
-        .stat-item:nth-child(1) { animation-delay: 0.6s; }
-        .stat-item:nth-child(2) { animation-delay: 0.7s; }
-        .stat-item:nth-child(3) { animation-delay: 0.8s; }
-
-        .stat-value {
-            font-family: 'Space Mono', monospace;
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--graphite);
-            line-height: 1;
+        .hero-stat-value {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--petrol);
             margin-bottom: 8px;
+            font-family: 'Space Mono', monospace;
         }
 
-        .stat-label {
-            font-size: 15px;
+        .hero-stat-label {
+            font-size: 14px;
             color: var(--slate);
             font-weight: 500;
         }
 
-        /* Section Styling */
+        /* Trust Bar */
+        .trust-bar {
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .trust-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--petrol);
+            margin-bottom: 4px;
+        }
+
+        .trust-label {
+            font-size: 13px;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        /* Sections */
         section {
             padding: 100px 0;
         }
 
         .section-header {
-            max-width: 800px;
-            margin-bottom: 64px;
+            max-width: 680px;
+            margin: 0 auto 60px;
+            text-align: center;
         }
 
         .section-label {
-            font-family: 'Space Mono', monospace;
+            display: inline-block;
+            color: var(--sage);
             font-size: 13px;
-            color: var(--petrol);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
             margin-bottom: 16px;
+            font-family: 'Space Mono', monospace;
         }
 
         .section-title {
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 700;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            color: var(--graphite);
         }
 
         .section-description {
-            font-size: 19px;
-            color: var(--slate);
-            line-height: 1.7;
-        }
-
-        /* Credenciais Section */
-        .credenciais {
-            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
-            color: white;
-        }
-
-        .credenciais .section-label {
-            color: var(--sage);
-        }
-
-        .credenciais .section-title {
-            color: white;
-        }
-
-        .credenciais .section-description {
-            color: rgba(255, 255, 255, 0.92);
             font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .credenciais-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .credencial-item {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 32px;
-            border-radius: 8px;
-            border-left: 4px solid var(--sage);
-            transition: all 0.3s;
-        }
-
-        .credencial-item:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateX(4px);
-        }
-
-
-        .credencial-item h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: white;
-            letter-spacing: -0.02em;
-        }
-
-        .credencial-item p {
-            font-size: 17px;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.92);
-            letter-spacing: 0.01em;
-        }
-
-        .credenciais-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 56px;
-            padding-top: 48px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .credenciais-stat-item {
-            border-left: 4px solid var(--sage);
-            padding-left: 24px;
-        }
-
-        .credenciais-stat-value {
-            font-family: 'Space Mono', monospace;
-            font-size: 40px;
-            font-weight: 700;
-            color: white;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .credenciais-stat-label {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.92);
-            font-weight: 500;
-            line-height: 1.5;
+            color: var(--slate);
+            line-height: 1.6;
         }
 
         /* Serviços Grid */
         .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 32px;
+            margin-top: 48px;
         }
 
         .servico-card {
             background: white;
             border: 2px solid var(--border);
             border-radius: 12px;
-            padding: 40px;
+            padding: 32px;
             transition: all 0.3s;
             position: relative;
-            overflow: hidden;
-        }
-
-        .servico-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--petrol);
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.3s;
         }
 
         .servico-card:hover {
             border-color: var(--petrol);
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(10, 77, 104, 0.1);
+            box-shadow: 0 12px 32px rgba(10, 77, 104, 0.12);
         }
 
-        .servico-card:hover::before {
-            transform: scaleY(1);
+        .servico-tag {
+            display: inline-block;
+            background: rgba(107, 142, 35, 0.1);
+            color: var(--sage);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
         }
 
-        .servico-card-impact {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--petrol);
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .servico-card h3 {
+        .servico-title {
             font-size: 24px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: var(--graphite);
         }
 
-        .servico-card p {
-            font-size: 16px;
+        .servico-description {
+            font-size: 15px;
             color: var(--slate);
-            line-height: 1.7;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .servico-benefits {
+            list-style: none;
             margin-bottom: 24px;
         }
 
-        .servico-card ul {
-            list-style: none;
-        }
-
-        .servico-card li {
-            font-size: 15px;
-            color: var(--slate);
-            margin-bottom: 12px;
-            padding-left: 24px;
+        .servico-benefits li {
+            padding: 8px 0;
+            padding-left: 28px;
             position: relative;
+            font-size: 14px;
+            color: var(--slate);
         }
 
-        .servico-card li::before {
-            content: '→';
+        .servico-benefits li::before {
+            content: '✓';
             position: absolute;
             left: 0;
             color: var(--sage);
             font-weight: 700;
+            font-size: 16px;
         }
 
-        /* Cases/SaaS Section */
-        .cases {
-            background: #F8FAFC;
+        .servico-ideal {
+            padding: 16px;
+            background: rgba(10, 77, 104, 0.05);
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
+        .servico-ideal-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--petrol);
+            margin-bottom: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        .servico-ideal-text {
+            font-size: 14px;
+            color: var(--slate);
+            line-height: 1.5;
+        }
+
+        .servico-pricing {
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        .servico-price-main {
+            font-size: 13px;
+            color: var(--slate);
+            margin-bottom: 4px;
+        }
+
+        .servico-price-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--petrol);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .servico-price-detail {
+            font-size: 12px;
+            color: var(--slate);
+            margin-top: 8px;
+        }
+
+        .servico-roi {
+            background: rgba(107, 142, 35, 0.08);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 16px;
+        }
+
+        .servico-roi-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .servico-roi-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--graphite);
+        }
+
+        /* Cases */
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
             margin-top: 48px;
         }
 
         .case-card {
             background: white;
-            border-radius: 16px;
-            overflow: hidden;
             border: 2px solid var(--border);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .case-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(10, 77, 104, 0.05) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.4s;
-            pointer-events: none;
-        }
-
-        .case-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(10, 77, 104, 0.15);
-            border-color: var(--petrol);
-        }
-
-        .case-card:hover::after {
-            opacity: 1;
-        }
-
-        .case-header {
-            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
-            padding: 40px 32px;
-            position: relative;
-            min-height: 160px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-
-        .case-card h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .case-category {
-            font-family: 'Space Mono', monospace;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .case-body {
-            padding: 32px;
-        }
-
-        .case-description {
-            font-size: 16px;
-            color: var(--slate);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .case-target {
-            font-size: 14px;
-            color: var(--petrol);
-            font-weight: 600;
-            margin-bottom: 24px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .case-target::before {
-            content: '◆';
-            position: absolute;
-            left: 0;
-            color: var(--sage);
-        }
-
-        .case-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--petrol);
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .case-link::after {
-            content: '→';
-            margin-left: 8px;
-            transition: transform 0.2s;
-        }
-
-        .case-link:hover::after {
-            transform: translateX(4px);
-        }
-
-        /* Processo Timeline - 2 cards por linha */
-        .processo-timeline {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .processo-step {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 32px;
-            padding: 32px;
-            background: white;
+            border-left: 4px solid var(--petrol);
             border-radius: 12px;
-            border: 2px solid var(--border);
+            padding: 32px;
             transition: all 0.3s;
         }
 
-        .processo-step:hover {
-            border-color: var(--petrol);
-            transform: translateX(8px);
-            box-shadow: 0 8px 16px rgba(10, 77, 104, 0.08);
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(10, 77, 104, 0.12);
         }
 
-        .step-number {
-            font-family: 'Space Mono', monospace;
-            font-size: 56px;
+        .case-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .case-stat {
+            text-align: center;
+            padding: 12px;
+            background: rgba(10, 77, 104, 0.05);
+            border-radius: 8px;
+        }
+
+        .case-stat-value {
+            font-size: 32px;
             font-weight: 700;
             color: var(--petrol);
-            line-height: 1;
-            opacity: 0.3;
+            margin-bottom: 4px;
+            font-family: 'Space Mono', monospace;
         }
 
-        .step-content h3 {
+        .case-stat-label {
+            font-size: 12px;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        .case-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--graphite);
+        }
+
+        .case-description {
+            font-size: 15px;
+            color: var(--slate);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .case-company {
+            font-size: 13px;
+            color: var(--petrol);
+            font-weight: 600;
+            padding: 8px 12px;
+            background: rgba(10, 77, 104, 0.08);
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* Processo */
+        .processo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .processo-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .processo-card:hover {
+            border-color: var(--petrol);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(10, 77, 104, 0.12);
+        }
+
+        .processo-number {
+            position: absolute;
+            top: -16px;
+            left: 24px;
+            background: var(--petrol);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .processo-title {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--graphite);
+            padding-top: 8px;
         }
 
-        .step-duration {
-            font-family: 'Space Mono', monospace;
-            font-size: 12px;
+        .processo-duration {
+            font-size: 13px;
             color: var(--sage);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
         }
 
-        .step-description {
-            font-size: 16px;
+        .processo-description {
+            font-size: 15px;
             color: var(--slate);
-            line-height: 1.7;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .processo-highlight {
+            padding: 16px;
+            background: rgba(107, 142, 35, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid var(--sage);
+        }
+
+        .processo-highlight-text {
+            font-size: 14px;
+            color: var(--graphite);
+            font-weight: 600;
         }
 
         /* CTA Section */
         .cta-section {
-            text-align: center;
-            padding: 120px 0;
             background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
+            padding: 80px 0;
+            text-align: center;
             color: white;
-            position: relative;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
         }
 
         .cta-section h2 {
-            font-size: clamp(36px, 5vw, 56px);
+            font-size: 42px;
             font-weight: 800;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
+            margin-bottom: 20px;
         }
 
         .cta-section p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 700px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
+            font-size: 18px;
+            margin-bottom: 32px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
         }
 
         .cta-button-large {
-            background: var(--sage);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-whats);
             color: white;
-            padding: 20px 56px;
+            padding: 18px 40px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
             font-size: 17px;
-            display: inline-block;
             transition: all 0.3s;
-            border: 2px solid var(--sage);
-            box-shadow: 0 4px 12px rgba(107, 142, 35, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button-large:hover {
-            background: linear-gradient(135deg, #00B37E 0%, #009966 100%);
             transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(0, 229, 160, 0.4);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .cta-section .cta-button-large {
-            background: var(--gradient-whats);
-            border-color: transparent;
-            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
+        .cta-urgency {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         /* Footer */
         footer {
-            padding: 80px 0 40px;
-            background: #0F1419;
-            color: rgba(255, 255, 255, 0.7);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 60px 0 24px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 48px;
+            gap: 48px;
+            margin-bottom: 40px;
         }
 
         .footer-brand h3 {
             font-size: 24px;
-            color: white;
-            margin-bottom: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--graphite);
         }
 
         .footer-brand p {
+            color: var(--slate);
             font-size: 15px;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
         }
 
         .footer-column h4 {
             font-size: 14px;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 20px;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            color: var(--graphite);
         }
 
         .footer-column a {
             display: block;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--slate);
             text-decoration: none;
-            font-size: 15px;
             margin-bottom: 12px;
+            font-size: 15px;
             transition: color 0.2s;
         }
 
         .footer-column a:hover {
-            color: var(--sage);
+            color: var(--petrol);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
             text-align: center;
+            color: var(--slate);
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+
+        .floating-whatsapp-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-whats);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0, 229, 160, 0.4);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .floating-whatsapp-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(0, 229, 160, 0.5);
+        }
+
+        .floating-whatsapp-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .floating-whatsapp-main {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .floating-whatsapp-sub {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .online-indicator {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 10px;
+            height: 10px;
+            background: #4ade80;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .container {
                 padding: 0 24px;
             }
 
-            header {
-                padding: 10px 0;
-            }
-
-            .logo img {
-                height: 32px;
-                max-height: 36px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 24px 0 60px;
-            }
-
-            .hero-stats {
-                margin-top: 56px;
-                padding-top: 40px;
-            }
-
-            .hero h1 {
-                max-width: none;
+            .hero-title {
+                font-size: 40px;
             }
 
             .hero-inner {
                 grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-card {
-                padding-right: 0;
+                gap: 32px;
             }
 
             .hero-card-image {
                 order: -1;
-                aspect-ratio: 16/10;
                 margin-right: -24px;
                 margin-left: -24px;
             }
@@ -858,53 +882,25 @@
                 background: linear-gradient(180deg, rgba(242, 248, 244, 0.5) 0%, transparent 40%);
             }
 
-            .hero-ctas {
-                flex-direction: column;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .credenciais-grid,
-            .credenciais-stats,
             .servicos-grid,
             .cases-grid {
                 grid-template-columns: 1fr;
             }
 
-            .credenciais-stats {
-                margin-top: 40px;
-                padding-top: 40px;
-            }
-
-            .processo-timeline {
+            .processo-grid {
                 grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .processo-step {
-                grid-template-columns: 60px 1fr;
-                gap: 20px;
-                padding: 24px;
-            }
-
-            .step-number {
-                font-size: 40px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+            }
+
+            .trust-content {
+                flex-direction: column;
+                gap: 24px;
             }
         }
 
-        /* Scroll Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -915,394 +911,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Hero WhatsApp CTAs (home-whats) */
-        .whatsapp-icon {
-            width: 22px;
-            height: 22px;
-            flex-shrink: 0;
-        }
-
-        .btn-primary .whatsapp-icon {
-            margin-right: 4px;
-        }
-
-        .hero-ctas .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gradient-whats);
-            border-color: transparent;
-            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
-        }
-
-        .hero-ctas .btn-primary:hover {
-            background: linear-gradient(135deg, #00B37E 0%, #009966 100%);
-            box-shadow: 0 8px 24px rgba(0, 229, 160, 0.35);
-        }
-
-        .header-cta-whats {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gradient-whats) !important;
-            border-color: transparent !important;
-            box-shadow: 0 4px 16px rgba(0, 229, 160, 0.25);
-        }
-
-        .header-cta-whats:hover {
-            background: linear-gradient(135deg, #00B37E 0%, #009966 100%) !important;
-            box-shadow: 0 8px 24px rgba(0, 229, 160, 0.35);
-        }
-
-        .btn-microcopy {
-            font-size: 15px;
-            color: var(--slate);
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .btn-microcopy span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-microcopy span::before {
-            content: '✓';
-            color: var(--sage);
-            font-weight: 700;
-        }
-
-        /* WhatsApp Preview Section */
-        .whatsapp-preview-section {
-            padding: 100px 0;
-        }
-
-        .preview-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-            margin-top: 48px;
-        }
-
-        .preview-benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .benefit-item {
-            display: flex;
-            gap: 16px;
-            padding: 24px;
-            background: white;
-            border-radius: 8px;
-            border: 2px solid var(--border);
-            border-left: 4px solid var(--petrol);
-            transition: all 0.3s;
-        }
-
-        .benefit-item:hover {
-            border-color: var(--petrol);
-            transform: translateX(4px);
-            box-shadow: 0 8px 16px rgba(10, 77, 104, 0.08);
-        }
-
-        .benefit-number {
-            font-family: 'Space Mono', monospace;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--petrol);
-            flex-shrink: 0;
-            opacity: 0.8;
-        }
-
-        .benefit-content h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--graphite);
-        }
-
-        .benefit-content p {
-            color: var(--slate);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .chat-mockup {
-            background: #E5DDD5;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 12px 32px rgba(10, 77, 104, 0.15);
-            max-width: 380px;
-            margin: 0 auto;
-            border: 2px solid var(--border);
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, var(--petrol) 0%, #083d54 100%);
-            color: white;
-            padding: 16px;
-            border-radius: 8px 8px 0 0;
-            margin: -20px -20px 16px -20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .chat-avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--sage);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .chat-info h4 {
-            font-size: 16px;
-            margin-bottom: 2px;
-        }
-
-        .chat-status {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-
-        .chat-messages {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .message {
-            padding: 12px 14px;
-            border-radius: 8px;
-            max-width: 90%;
-            font-size: 14px;
-        }
-
-        .message-bot {
-            background: white;
-            align-self: flex-start;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            color: var(--graphite);
-        }
-
-        .message p {
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-
-        .message p:last-child {
-            margin-bottom: 0;
-        }
-
-        .message-options {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .message-option {
-            background: var(--light-gray);
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            text-align: center;
-            color: var(--graphite);
-            border: 1px solid var(--border);
-        }
-
-        .chat-caption {
-            text-align: center;
-            margin-top: 12px;
-            color: var(--slate);
-            font-size: 13px;
-            font-style: italic;
-        }
-
-        /* Proof cards (Cases de Sucesso - home-whats) */
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .proof-card {
-            background: white;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .proof-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--petrol);
-        }
-
-        .proof-card:hover {
-            border-color: var(--petrol);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(10, 77, 104, 0.1);
-        }
-
-        .proof-stats {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 16px;
-        }
-
-        .proof-stat-value {
-            font-family: 'Space Mono', monospace;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--petrol);
-        }
-
-        .proof-stat-label {
-            font-size: 13px;
-            color: var(--slate);
-        }
-
-        .proof-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--graphite);
-        }
-
-        .proof-description {
-            color: var(--slate);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .proof-company {
-            display: inline-block;
-            background: var(--light-gray);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            color: var(--slate);
-            font-weight: 500;
-        }
-
-        .cta-urgency {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Floating WhatsApp (igual modelo) */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            animation: floatBounce 3s ease-in-out infinite;
-        }
-
-        @keyframes floatBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating-whatsapp-btn {
-            background: #25D366;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .floating-whatsapp-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
-        }
-
-        .floating-whatsapp-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .floating-whatsapp-main {
-            font-size: 0.9375rem;
-        }
-
-        .floating-whatsapp-sub {
-            font-size: 0.75rem;
-            opacity: 0.9;
-        }
-
-        .online-indicator {
-            width: 8px;
-            height: 8px;
-            background: #00ff00;
-            border-radius: 50%;
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.7; }
-        }
-
-        @media (max-width: 768px) {
-            .preview-container {
-                grid-template-columns: 1fr;
-            }
-            .btn-microcopy {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .floating-whatsapp-text {
-                display: none;
-            }
-            .floating-whatsapp-btn {
-                width: 56px;
-                height: 56px;
-                border-radius: 50%;
-                padding: 0;
-                justify-content: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1310,18 +918,19 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="assets/logo-automate-ai.png" alt="Automate AI" loading="lazy">
+                    <img src="assets/logo-automate-ai.png" alt="AutomateAI">
+                    AUTOMATE<span>AI</span>
                 </div>
                 <nav>
                     <a href="#servicos">Serviços</a>
                     <a href="#cases">Cases</a>
                     <a href="#processo">Processo</a>
                     <a href="#contato">Contato</a>
+                    <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20a%20análise%20inicial%20gratuita" class="btn-primary" target="_blank" rel="noopener">
+                        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Análise Inicial Gratuita
+                    </a>
                 </nav>
-                <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="btn-primary header-cta-whats" target="_blank" rel="noopener">
-                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Diagnóstico Gratuito
-                </a>
             </div>
         </div>
     </header>
@@ -1330,280 +939,233 @@
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-card">
-                    <div class="hero-label">Agência Enterprise de IA e Automação</div>
-                    <h1>
-                        Transforme produtividade em <span class="accent">lucro mensurável</span><br>
-                        com automação e IA
-                    </h1>
-                    <p>
-                        Automações e agentes de IA que reduzem custos, eliminam tarefas manuais e entregam retorno em até 30 dias.
+                    <span class="kicker">AGÊNCIA DE AUTOMAÇÃO E IA</span>
+                    <h1 class="hero-title">Reduza até 42% dos custos operacionais em 30 dias</h1>
+                    <p class="hero-description">
+                        Eliminamos tarefas manuais que custam €1.500-3.000/mês à sua empresa. 
+                        Primeiro resultado em produção: 30 dias garantidos.
                     </p>
+                    <div class="hero-metrics">
+                        <div class="hero-metric">
+                            <div class="hero-metric-value">€1.800</div>
+                            <div class="hero-metric-label">Economia média/mês</div>
+                        </div>
+                        <div class="hero-metric">
+                            <div class="hero-metric-value">18h</div>
+                            <div class="hero-metric-label">Recuperadas/semana</div>
+                        </div>
+                        <div class="hero-metric">
+                            <div class="hero-metric-value">90 dias</div>
+                            <div class="hero-metric-label">ROI típico</div>
+                        </div>
+                    </div>
                     <div class="hero-ctas">
-                        <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="btn-primary" target="_blank" rel="noopener">
+                        <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20a%20análise%20inicial%20gratuita" class="btn-primary" target="_blank" rel="noopener">
                             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Falar com Especialista no WhatsApp
+                            Iniciar Análise Gratuita (10min)
                         </a>
-                        <a href="#cases" class="btn-secondary">Ver Cases de Sucesso</a>
+                        <a href="#cases" class="btn-secondary">Ver Resultados Reais</a>
                     </div>
                     <div class="btn-microcopy">
-                        <span>Atendimento imediato</span>
-                        <span>Diagnóstico em 10min</span>
+                        <span>Resposta em 2 minutos</span>
+                        <span>Sem custo</span>
                         <span>Sem compromisso</span>
                     </div>
                 </div>
-
                 <div class="hero-card-image">
-                    <img src="assets/hero-image.webp" alt="IA e automação empresarial — dados, colaboração e inovação digital" loading="eager">
+                    <img src="assets/hero-image.webp" alt="Automação e IA empresarial" loading="eager">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="credenciais">
+    <div class="trust-bar">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label">Por que Automate AI</div>
-                <h2 class="section-title">Como funciona na prática</h2>
-                <p class="section-description">
-                    Identificamos exatamente onde sua operação está desperdiçando tempo, dinheiro e capacidade humana, 
-                    e priorizamos apenas o que gera retorno real.
-                </p>
-            </div>
-
-            <div class="credenciais-grid">
-                <div class="credencial-item reveal">
-                    <h3>Diagnóstico Estratégico</h3>
-                    <p>
-                        Identificamos exatamente onde sua operação está perdendo tempo, dinheiro e capacidade produtiva. 
-                        Mapeamos processos, sistemas e fluxos críticos para encontrar gargalos reais.
-                    </p>
+            <div class="trust-content">
+                <div class="trust-item">
+                    <div class="trust-value">23+</div>
+                    <div class="trust-label">Empresas automatizadas em 2024</div>
                 </div>
-                <div class="credencial-item reveal">
-                    <h3>Priorização por ROI</h3>
-                    <p>
-                        Nem tudo deve ser automatizado. Classificamos as oportunidades pelo retorno financeiro, complexidade 
-                        e velocidade de implementação, focando apenas no que gera ROI claro e mensurável.
-                    </p>
+                <div class="trust-item">
+                    <div class="trust-value">€850k</div>
+                    <div class="trust-label">Economizados pelos clientes</div>
                 </div>
-                <div class="credencial-item reveal">
-                    <h3>Piloto em 30 dias</h3>
-                    <p>
-                        Implementamos um piloto funcional em ambiente real, com integrações, métricas e governança. 
-                        Você vê a automação rodando, gerando resultado, antes de qualquer decisão de escala.
-                    </p>
+                <div class="trust-item">
+                    <div class="trust-value">30 dias</div>
+                    <div class="trust-label">Tempo médio primeiro resultado</div>
                 </div>
-                <div class="credencial-item reveal">
-                    <h3>Governança e Controle Total</h3>
-                    <p>
-                        Todas as automações operam com rastreabilidade, logs, auditoria e controle de acesso. 
-                        Sua empresa mantém domínio total sobre dados, decisões e evolução dos sistemas.
-                    </p>
-                </div>
-            </div>
-
-            <div class="credenciais-stats">
-                <div class="credenciais-stat-item">
-                    <div class="credenciais-stat-value">30d</div>
-                    <div class="credenciais-stat-label">Primeiro piloto em produção</div>
-                </div>
-                <div class="credenciais-stat-item">
-                    <div class="credenciais-stat-value">100%</div>
-                    <div class="credenciais-stat-label">Governança e auditoria</div>
-                </div>
-                <div class="credenciais-stat-item">
-                    <div class="credenciais-stat-value">ROI</div>
-                    <div class="credenciais-stat-label">Mensurável desde dia 1</div>
+                <div class="trust-item">
+                    <div class="trust-value">100%</div>
+                    <div class="trust-label">Clientes com ROI positivo</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="whatsapp-preview-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Como funciona</div>
-                <h2 class="section-title">Diagnóstico Gratuito em 3 Passos</h2>
-                <p class="section-description">
-                    10 minutos de conversa para identificar exatamente onde você está perdendo dinheiro.
-                </p>
-            </div>
-            <div class="preview-container">
-                <div class="preview-benefits">
-                    <div class="benefit-item reveal">
-                        <div class="benefit-number">1</div>
-                        <div class="benefit-content">
-                            <h3>Clique e inicie conversa</h3>
-                            <p>Nossa especialista em IA responde imediatamente no WhatsApp</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item reveal">
-                        <div class="benefit-number">2</div>
-                        <div class="benefit-content">
-                            <h3>Responda 4 perguntas rápidas</h3>
-                            <p>Setor • Maior gargalo • Tamanho da operação • Expectativa de resultado</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item reveal">
-                        <div class="benefit-number">3</div>
-                        <div class="benefit-content">
-                            <h3>Receba diagnóstico na hora</h3>
-                            <p>3-5 automações priorizadas por ROI + timeline realista + próximos passos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="chat-mockup reveal">
-                    <div class="chat-header">
-                        <div class="chat-avatar">AI</div>
-                        <div class="chat-info">
-                            <h4>AutomateAI</h4>
-                            <div class="chat-status">● online agora</div>
-                        </div>
-                    </div>
-                    <div class="chat-messages">
-                        <div class="message message-bot">
-                            <p>Olá! Sou a Ana, especialista em automação da AutomateAI.</p>
-                            <p>Vou fazer um diagnóstico rápido da sua operação em 4 perguntas.</p>
-                            <p><strong>Em qual setor sua empresa atua?</strong></p>
-                            <div class="message-options">
-                                <div class="message-option">Saúde/Clínicas</div>
-                                <div class="message-option">Imobiliário</div>
-                                <div class="message-option">Varejo/E-commerce</div>
-                                <div class="message-option">Serviços B2B</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="chat-caption">Exemplo real da conversa que você terá →</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <section id="servicos">
         <div class="container">
             <div class="section-header">
-                <div class="section-label">O que fazemos</div>
-                <h2 class="section-title">Serviços de Automação e IA</h2>
+                <div class="section-label">Nossos Serviços</div>
+                <h2 class="section-title">Como podemos automatizar sua empresa</h2>
                 <p class="section-description">
-                    Desenvolvemos soluções sob medida para automatizar processos críticos, 
-                    integrar sistemas e aplicar IA onde realmente gera valor.
+                    Soluções focadas em resultados concretos. Cada serviço é projetado para gerar retorno rápido e mensurável.
                 </p>
             </div>
 
             <div class="servicos-grid">
                 <div class="servico-card reveal">
-                    <p class="servico-card-impact">Projetamos a espinha dorsal de IA da sua empresa para escalar com segurança e controle.</p>
-                    <h3>AI Solutions Architect</h3>
-                    <p>
-                        Arquitetura de IA com governança, segurança e integração completa aos 
-                        seus sistemas existentes.
+                    <span class="servico-tag">Mais Vendido</span>
+                    <h3 class="servico-title">Atendimento Automático 24/7</h3>
+                    <p class="servico-description">
+                        Chatbot inteligente atende clientes no WhatsApp, agenda consultas e qualifica leads 
+                        enquanto você dorme.
                     </p>
-                    <ul>
-                        <li>Casos de uso priorizados por ROI</li>
-                        <li>Estratégia de dados (RAG, embeddings)</li>
-                        <li>MLOps e monitoramento de custos</li>
-                        <li>Compliance e LGPD</li>
+                    <ul class="servico-benefits">
+                        <li>Respostas instantâneas (mesmo às 3h da manhã)</li>
+                        <li>Agenda consultas/reuniões automaticamente</li>
+                        <li>Qualifica leads antes de passar para você</li>
+                        <li>Nunca mais perca cliente por demora</li>
                     </ul>
+                    <div class="servico-ideal">
+                        <div class="servico-ideal-title">Ideal para:</div>
+                        <div class="servico-ideal-text">Clínicas, Imobiliárias, E-commerce, Lojas locais, Restaurantes</div>
+                    </div>
+                    <div class="servico-pricing">
+                        <div class="servico-price-main">A partir de:</div>
+                        <div class="servico-price-value">€297/mês</div>
+                        <div class="servico-price-detail">Setup inicial: €497 (pagamento único)</div>
+                    </div>
+                    <div class="servico-roi">
+                        <div class="servico-roi-label">Economia típica</div>
+                        <div class="servico-roi-value">€800-1.500/mês vs contratar atendente</div>
+                    </div>
                 </div>
 
                 <div class="servico-card reveal">
-                    <p class="servico-card-impact">Eliminamos tarefas manuais que hoje consomem horas da sua equipe todos os dias.</p>
-                    <h3>Automação de Processos</h3>
-                    <p>
-                        Automatizamos fluxos end-to-end com integrações robustas e métricas 
-                        de resultado em tempo real.
+                    <span class="servico-tag">Alto ROI</span>
+                    <h3 class="servico-title">Automação Administrativa</h3>
+                    <p class="servico-description">
+                        Eliminamos trabalho manual em faturas, emails, agendamentos e tarefas administrativas 
+                        que consomem 20h/semana.
                     </p>
-                    <ul>
-                        <li>Integrações com ERP, CRM, ITSM</li>
-                        <li>Orquestração, logs e alertas</li>
-                        <li>Dashboard de KPIs em tempo real</li>
-                        <li>Trilha de auditoria completa</li>
+                    <ul class="servico-benefits">
+                        <li>Processamento automático de faturas</li>
+                        <li>Emails e follow-ups automatizados</li>
+                        <li>Gestão de documentos inteligente</li>
+                        <li>Zero erros manuais, 100% rastreável</li>
                     </ul>
+                    <div class="servico-ideal">
+                        <div class="servico-ideal-title">Ideal para:</div>
+                        <div class="servico-ideal-text">Contabilidade, Escritórios, Consultoria, Serviços B2B</div>
+                    </div>
+                    <div class="servico-pricing">
+                        <div class="servico-price-main">A partir de:</div>
+                        <div class="servico-price-value">€497/mês</div>
+                        <div class="servico-price-detail">Projeto inicial: €997-2.997</div>
+                    </div>
+                    <div class="servico-roi">
+                        <div class="servico-roi-label">Economia típica</div>
+                        <div class="servico-roi-value">€1.200-2.500/mês = 18h/semana</div>
+                    </div>
                 </div>
 
                 <div class="servico-card reveal">
-                    <p class="servico-card-impact">Preparamos seu time para operar IA sem dependência constante de fornecedores.</p>
-                    <h3>Treinamento e Capacitação</h3>
-                    <p>
-                        Preparamos sua equipe para usar, manter e evoluir as soluções de IA 
-                        implementadas.
+                    <span class="servico-tag">Enterprise</span>
+                    <h3 class="servico-title">Integração de Sistemas</h3>
+                    <p class="servico-description">
+                        Conectamos ERP + CRM + ITSM para eliminar trabalho duplicado e ter dados 
+                        em tempo real com dashboards automáticos.
                     </p>
-                    <ul>
-                        <li>Workshops práticos</li>
-                        <li>Documentação técnica detalhada</li>
-                        <li>Frameworks customizados</li>
-                        <li>Suporte contínuo</li>
+                    <ul class="servico-benefits">
+                        <li>Dashboards em tempo real</li>
+                        <li>Alertas inteligentes automáticos</li>
+                        <li>Decisões baseadas em dados</li>
+                        <li>Auditoria completa de processos</li>
                     </ul>
+                    <div class="servico-ideal">
+                        <div class="servico-ideal-title">Ideal para:</div>
+                        <div class="servico-ideal-text">Empresas 50+ funcionários, Multi-sistemas, Franquias</div>
+                    </div>
+                    <div class="servico-pricing">
+                        <div class="servico-price-main">Investimento:</div>
+                        <div class="servico-price-value">Sob consulta</div>
+                        <div class="servico-price-detail">Projeto customizado</div>
+                    </div>
+                    <div class="servico-roi">
+                        <div class="servico-roi-label">Economia típica</div>
+                        <div class="servico-roi-value">€2.000-4.000/mês em eficiência</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cases" class="cases">
+    <section id="cases" style="background: white;">
         <div class="container">
             <div class="section-header">
-                <div class="section-label">Resultados Reais</div>
-                <h2 class="section-title">Cases de Sucesso</h2>
+                <div class="section-label">Resultados Comprovados</div>
+                <h2 class="section-title">Empresas que transformaram processos em lucro</h2>
                 <p class="section-description">
-                    Empresas que transformaram processos em vantagem competitiva mensurável.
+                    Números reais de clientes reais. Cada caso representa economia mensurável e ROI confirmado.
                 </p>
             </div>
 
-            <div class="proof-grid">
-                <div class="proof-card reveal">
-                    <div class="proof-stats">
-                        <div class="proof-stat">
-                            <div class="proof-stat-value">-67%</div>
-                            <div class="proof-stat-label">Tempo atendimento</div>
+            <div class="cases-grid">
+                <div class="case-card reveal">
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">-67%</div>
+                            <div class="case-stat-label">Tempo atendimento</div>
                         </div>
-                        <div class="proof-stat">
-                            <div class="proof-stat-value">340%</div>
-                            <div class="proof-stat-label">ROI em 90 dias</div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">340%</div>
+                            <div class="case-stat-label">ROI em 90 dias</div>
                         </div>
                     </div>
-                    <h3 class="proof-title">Automação Completa de Agendamento</h3>
-                    <p class="proof-description">
+                    <h3 class="case-title">Automação Completa de Agendamento</h3>
+                    <p class="case-description">
                         Clínica odontológica com 4 unidades automatizou agendamento, lembretes e follow-up pós-consulta. 
-                        Equipe liberada para atendimento de alto valor.
+                        Recepcionistas passaram de 4h/dia em agendamentos para 0h, focando em atendimento de valor.
                     </p>
-                    <span class="proof-company">Rede de Clínicas • 4 unidades</span>
+                    <span class="case-company">Rede de Clínicas Dentárias • 4 unidades</span>
                 </div>
 
-                <div class="proof-card reveal">
-                    <div class="proof-stats">
-                        <div class="proof-stat">
-                            <div class="proof-stat-value">+156%</div>
-                            <div class="proof-stat-label">Conversão leads</div>
+                <div class="case-card reveal">
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">+156%</div>
+                            <div class="case-stat-label">Conversão leads</div>
                         </div>
-                        <div class="proof-stat">
-                            <div class="proof-stat-value">24/7</div>
-                            <div class="proof-stat-label">Atendimento IA</div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">24/7</div>
+                            <div class="case-stat-label">Atendimento IA</div>
                         </div>
                     </div>
-                    <h3 class="proof-title">IA para Qualificação de Leads</h3>
-                    <p class="proof-description">
+                    <h3 class="case-title">IA para Qualificação de Leads</h3>
+                    <p class="case-description">
                         Imobiliária implementou triagem inteligente com IA conversacional. Leads qualificados automaticamente 
-                        e agendamento de visitas sem intervenção humana.
+                        e agendamento de visitas sem intervenção humana. Taxa de conversão subiu 156%.
                     </p>
-                    <span class="proof-company">Grupo Imobiliário • 200M€ portfólio</span>
+                    <span class="case-company">Grupo Imobiliário • Portfólio €200M</span>
                 </div>
 
-                <div class="proof-card reveal">
-                    <div class="proof-stats">
-                        <div class="proof-stat">
-                            <div class="proof-stat-value">-42%</div>
-                            <div class="proof-stat-label">Custos operacionais</div>
+                <div class="case-card reveal">
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">-42%</div>
+                            <div class="case-stat-label">Custos operacionais</div>
                         </div>
-                        <div class="proof-stat">
-                            <div class="proof-stat-value">18h</div>
-                            <div class="proof-stat-label">Economizadas/semana</div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">18h</div>
+                            <div class="case-stat-label">Economizadas/semana</div>
                         </div>
                     </div>
-                    <h3 class="proof-title">Integração ERP + CRM + ITSM</h3>
-                    <p class="proof-description">
+                    <h3 class="case-title">Integração ERP + CRM + ITSM</h3>
+                    <p class="case-description">
                         Empresa de serviços B2B eliminou trabalho manual entre sistemas. Orquestração completa com 
-                        dashboards de KPIs em tempo real e trilha de auditoria.
+                        dashboards de KPIs em tempo real, trilha de auditoria e redução de 42% nos custos.
                     </p>
-                    <span class="proof-company">Consultoria Tech • 85 colaboradores</span>
+                    <span class="case-company">Consultoria Tech • 85 colaboradores</span>
                 </div>
             </div>
         </div>
@@ -1613,58 +1175,70 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Como trabalhamos</div>
-                <h2 class="section-title">Processo de Implementação</h2>
+                <h2 class="section-title">Do primeiro contato ao resultado garantido</h2>
                 <p class="section-description">
-                    Metodologia estruturada para garantir resultados mensuráveis desde o primeiro dia.
+                    Processo transparente com marcos claros. Você sabe exatamente o que esperar em cada etapa.
                 </p>
             </div>
 
-            <div class="processo-timeline">
-                <div class="processo-step reveal">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Diagnóstico Gratuito</h3>
-                        <div class="step-duration">45 minutos</div>
-                        <p class="step-description">
-                            Mapeamos processos críticos, identificamos gargalos e priorizamos oportunidades por ROI real. 
-                            Você sai com 3-5 automações claras, viáveis e com timeline de implementação.
-                        </p>
+            <div class="processo-grid">
+                <div class="processo-card reveal">
+                    <div class="processo-number">01</div>
+                    <h3 class="processo-title">Análise Inicial pelo WhatsApp</h3>
+                    <div class="processo-duration">10 minutos • Gratuito</div>
+                    <p class="processo-description">
+                        Conversa rápida pelo WhatsApp onde você responde 4 perguntas sobre seu negócio. 
+                        Nosso sistema identifica automaticamente onde está perdendo mais dinheiro.
+                    </p>
+                    <div class="processo-highlight">
+                        <div class="processo-highlight-text">
+                            ✓ Você recebe na hora: 3-5 oportunidades de automação priorizadas + estimativa de economia mensal
+                        </div>
                     </div>
                 </div>
 
-                <div class="processo-step reveal">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Blueprint Técnico</h3>
-                        <div class="step-duration">1 semana</div>
-                        <p class="step-description">
-                            Desenhamos arquitetura, integrações, segurança e governança. 
-                            Plano 30/60/90 dias com milestones e KPIs claros.
-                        </p>
+                <div class="processo-card reveal">
+                    <div class="processo-number">02</div>
+                    <h3 class="processo-title">Diagnóstico Estratégico Completo</h3>
+                    <div class="processo-duration">45 minutos • Agendado</div>
+                    <p class="processo-description">
+                        Chamada com nosso especialista para aprofundar nas oportunidades identificadas. Mapeamos processos, 
+                        calculamos ROI detalhado e priorizamos por retorno financeiro.
+                    </p>
+                    <div class="processo-highlight">
+                        <div class="processo-highlight-text">
+                            ✓ Você sai com: Plano de automação completo + timeline 30/60/90 dias + proposta comercial
+                        </div>
                     </div>
                 </div>
 
-                <div class="processo-step reveal">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Piloto em Produção</h3>
-                        <div class="step-duration">30 dias</div>
-                        <p class="step-description">
-                            1 fluxo crítico funcionando em produção com integrações reais, logs, 
-                            alertas e dashboard de métricas (SLA, tempo, erro, custo).
-                        </p>
+                <div class="processo-card reveal">
+                    <div class="processo-number">03</div>
+                    <h3 class="processo-title">Implementação e Piloto</h3>
+                    <div class="processo-duration">30 dias</div>
+                    <p class="processo-description">
+                        Desenvolvemos e colocamos em produção a primeira automação crítica. Tudo com integrações reais, 
+                        métricas em tempo real e governança completa.
+                    </p>
+                    <div class="processo-highlight">
+                        <div class="processo-highlight-text">
+                            ✓ Garantia: Se não economizar pelo menos o valor investido, devolvemos 100%
+                        </div>
                     </div>
                 </div>
 
-                <div class="processo-step reveal">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Escala e Otimização</h3>
-                        <div class="step-duration">Contínuo</div>
-                        <p class="step-description">
-                            Expansão para novos processos, treinamento de equipe, handover e 
-                            melhoria contínua com retainer mensal.
-                        </p>
+                <div class="processo-card reveal">
+                    <div class="processo-number">04</div>
+                    <h3 class="processo-title">Escala e Autonomia</h3>
+                    <div class="processo-duration">Contínuo</div>
+                    <p class="processo-description">
+                        Expandimos para novos processos e treinamos sua equipe para operar com autonomia. 
+                        Você não fica refém de mensalidades eternas — o ganho fica com você.
+                    </p>
+                    <div class="processo-highlight">
+                        <div class="processo-highlight-text">
+                            ✓ Suporte contínuo com retainer mensal flexível
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1673,17 +1247,18 @@
 
     <section class="cta-section" id="diagnostico">
         <div class="container">
-            <h2>Pronto para automatizar com inteligência?</h2>
+            <h2>Descubra quanto sua empresa pode economizar</h2>
             <p>
-                Agende um diagnóstico gratuito de 10 minutos. Identificamos seu maior gargalo e você recebe 
-                3-5 oportunidades priorizadas por ROI. Atendimento via WhatsApp, sem custo, sem compromisso.
+                Análise inicial gratuita de 10 minutos pelo WhatsApp. Identificamos seu maior gargalo e você recebe 
+                3-5 oportunidades de automação priorizadas por ROI. Sem custo, sem compromisso.
             </p>
-            <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="cta-button-large" target="_blank" rel="noopener">
-                Iniciar Diagnóstico no WhatsApp Agora
+            <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20a%20análise%20inicial%20gratuita" class="cta-button-large" target="_blank" rel="noopener">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Iniciar Análise Gratuita no WhatsApp
             </a>
             <div class="cta-urgency">
-                <span>23 empresas fizeram diagnóstico esta semana</span>
-                <span>Tempo médio de resposta: 2 minutos</span>
+                <span>✓ 23 empresas fizeram análise esta semana</span>
+                <span>✓ Tempo médio de resposta: 2 minutos</span>
             </div>
         </div>
     </section>
@@ -1694,41 +1269,41 @@
                 <div class="footer-brand">
                     <h3>AutomateAI</h3>
                     <p>
-                        Agência enterprise de IA e automação. Transformamos processos em 
-                        vantagem competitiva com arquitetura sólida e resultados mensuráveis.
+                        Agência especializada em automação e IA para PME. Transformamos processos manuais 
+                        em vantagem competitiva com ROI mensurável e resultados em 30 dias.
                     </p>
                 </div>
                 <div class="footer-column">
                     <h4>Serviços</h4>
-                    <a href="#servicos">AI Solutions</a>
-                    <a href="#servicos">Automação</a>
-                    <a href="#servicos">Treinamento</a>
-                </div>
-                <div class="footer-column">
-                    <h4>Produtos</h4>
-                    <a href="#">MindQuest</a>
-                    <a href="#">DentalFlow</a>
-                    <a href="#">RealtyBot</a>
+                    <a href="#servicos">Atendimento 24/7</a>
+                    <a href="#servicos">Automação Admin</a>
+                    <a href="#servicos">Integração Sistemas</a>
                 </div>
                 <div class="footer-column">
                     <h4>Empresa</h4>
-                    <a href="#processo">Processo</a>
+                    <a href="#cases">Cases</a>
+                    <a href="#processo">Como Funciona</a>
                     <a href="#diagnostico">Contato</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
                     <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">LGPD</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2026 Automate AI — Agência de IA e Automação Empresarial
+                © 2026 AutomateAI — Agência de Automação e IA | Todos os direitos reservados
             </div>
         </div>
     </footer>
 
     <div class="floating-whatsapp">
-        <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20o%20diagnóstico%20gratuito" class="floating-whatsapp-btn" target="_blank" rel="noopener">
+        <a href="https://wa.me/351910000000?text=Olá!%20Quero%20fazer%20a%20análise%20inicial%20gratuita" class="floating-whatsapp-btn" target="_blank" rel="noopener">
             <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <div class="floating-whatsapp-text">
-                <span class="floating-whatsapp-main">Diagnóstico Gratuito</span>
-                <span class="floating-whatsapp-sub">Resposta imediata</span>
+                <span class="floating-whatsapp-main">Análise Gratuita</span>
+                <span class="floating-whatsapp-sub">Resposta em 2min</span>
             </div>
             <span class="online-indicator"></span>
         </a>
