@@ -106,16 +106,23 @@
             color: var(--petrol);
         }
 
-        nav a {
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        nav a:not(.btn-primary) {
             color: var(--slate);
             text-decoration: none;
             margin-left: 36px;
             font-size: 15px;
             font-weight: 500;
             transition: color 0.2s;
+            display: inline-block;
         }
 
-        nav a:hover {
+        nav a:not(.btn-primary):hover {
             color: var(--petrol);
         }
 
@@ -857,47 +864,208 @@
             50% { opacity: 0.5; }
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--graphite);
+            cursor: pointer;
+            padding: 8px;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .container {
-                padding: 0 24px;
+                padding: 0 20px;
+            }
+
+            header {
+                padding: 12px 0;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo img {
+                height: 32px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                order: 2;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav.active {
+                max-height: 500px;
+                padding-top: 16px;
+            }
+
+            nav a:not(.btn-primary) {
+                display: block;
+                margin-left: 0;
+                padding: 8px 0;
+                font-size: 16px;
+            }
+
+            nav .btn-primary {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 24px;
+            }
+
+            .hero {
+                padding: 24px 0 60px;
             }
 
             .hero-title {
-                font-size: 40px;
+                font-size: 32px;
+                line-height: 1.2;
+                margin-bottom: 16px;
             }
 
             .hero-inner {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 24px;
+            }
+
+            .hero-card {
+                padding-right: 0;
+                order: 1;
             }
 
             .hero-card-image {
-                order: -1;
-                margin-right: -24px;
-                margin-left: -24px;
+                order: 2;
+                margin-right: -20px;
+                margin-left: -20px;
+                margin-top: 0;
+                aspect-ratio: 16/9;
             }
 
             .hero-card-image::after {
-                background: linear-gradient(180deg, rgba(242, 248, 244, 0.5) 0%, transparent 40%);
+                background: linear-gradient(180deg, transparent 0%, rgba(242, 248, 244, 0.3) 50%, rgba(242, 248, 244, 0.8) 100%);
+            }
+
+            .hero-description {
+                font-size: 17px;
+                margin-bottom: 24px;
+            }
+
+            .hero-metrics {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            .hero-metric {
+                padding: 16px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero-ctas .btn-primary,
+            .hero-ctas .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .btn-microcopy {
+                flex-direction: column;
+                gap: 8px;
+                font-size: 13px;
             }
 
             .servicos-grid,
             .cases-grid {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
 
             .processo-grid {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 32px;
             }
 
             .trust-content {
                 flex-direction: column;
-                gap: 24px;
+                gap: 20px;
+            }
+
+            .trust-value {
+                font-size: 24px;
+            }
+
+            .trust-label {
+                font-size: 12px;
+            }
+
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-whatsapp-btn {
+                padding: 12px 16px;
+            }
+
+            .floating-whatsapp-main {
+                font-size: 13px;
+            }
+
+            .floating-whatsapp-sub {
+                font-size: 10px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .section-description {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
             }
         }
 
@@ -920,6 +1088,7 @@
                 <div class="logo">
                     <img src="assets/logo-automate-ai.png" alt="AutomateAI">
                 </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
                 <nav>
                     <a href="#servicos">Serviços</a>
                     <a href="#cases">Cases</a>
@@ -1310,6 +1479,25 @@
     </div>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        if (mobileMenuToggle && nav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                mobileMenuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking on a link
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    mobileMenuToggle.textContent = '☰';
+                });
+            });
+        }
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
