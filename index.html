@@ -351,7 +351,7 @@
 
         /* Trust Bar */
         .trust-bar {
-            background: white;
+            background: #F2F8F4;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 24px 0;
@@ -386,8 +386,33 @@
             padding: 100px 0;
         }
 
+        /* Alternância de fundos: verde claro ↔ branco. Última seção em azul forte. */
         #servicos {
-            padding-top: 48px;
+            padding-top: 64px;
+            padding-bottom: 100px;
+            background: white;
+            position: relative;
+        }
+
+        #servicos .section-header {
+            padding-top: 8px;
+        }
+
+        #servicos .section-label {
+            font-size: 14px;
+            letter-spacing: 0.14em;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(107, 142, 35, 0.25);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        #cases {
+            background: #F2F8F4;
+        }
+
+        #processo {
+            background: white;
         }
 
         .section-header {
@@ -1134,7 +1159,13 @@
             }
 
             #servicos {
-                padding-top: 36px;
+                padding-top: 48px;
+                padding-bottom: 60px;
+            }
+
+            #servicos .section-label {
+                font-size: 12px;
+                letter-spacing: 0.12em;
             }
 
             .section-title {
@@ -1340,7 +1371,7 @@
         </div>
     </section>
 
-    <section id="cases" style="background: white;">
+    <section id="cases">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Resultados Comprovados</div>
